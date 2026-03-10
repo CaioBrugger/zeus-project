@@ -1,0 +1,30 @@
+[submodule "sources/aiox-core"]
+	path = sources/aiox-core
+	url = https://github.com/SynkraAI/aiox-core
+[submodule "sources/awesome-claude-code"]
+	path = sources/awesome-claude-code
+	url = https://github.com/hesreallyhim/awesome-claude-code
+[submodule "sources/awesome-claude-skills"]
+	path = sources/awesome-claude-skills
+	url = https://github.com/ComposioHQ/awesome-claude-skills
+[submodule "sources/claude-mem"]
+	path = sources/claude-mem
+	url = https://github.com/thedotmack/claude-mem
+[submodule "sources/get-shit-done"]
+	path = sources/get-shit-done
+	url = https://github.com/gsd-build/get-shit-done
+[submodule "sources/n8n-mcp"]
+	path = sources/n8n-mcp
+	url = https://github.com/czlonkowski/n8n-mcp
+[submodule "sources/notebooklm-py"]
+	path = sources/notebooklm-py
+	url = https://github.com/teng-lin/notebooklm-py
+[submodule "sources/skills"]
+	path = sources/skills
+	url = https://github.com/anthropics/skills
+[submodule "sources/superpowers"]
+	path = sources/superpowers
+	url = https://github.com/obra/superpowers
+[submodule "sources/ui-ux-pro-max-skill"]
+	path = sources/ui-ux-pro-max-skill
+	url = https://github.com/nextlevelbuilder/ui-ux-pro-max-skill
