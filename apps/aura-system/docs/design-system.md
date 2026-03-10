@@ -45,7 +45,7 @@ Ele define:
 ### UI
 
 - `index.html`
-- `app.js`
+- `../../shared/zeus-nav.js`
 
 ### Assets de referencia
 
@@ -323,7 +323,7 @@ Antes de considerar uma pagina pronta, valide:
 - `styles/molecules.css`
 - `styles/organisms.css`
 - `index.html`
-- `app.js`
+- `../../shared/zeus-nav.js`
 
 ### Componentes de referencia
 

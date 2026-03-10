@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zeus Project | Guidelines</title>
+    <link rel="stylesheet" href="./zeus-pages.css" />
+  </head>
+  <body data-nav-root=".." data-nav-current="guidelines">
+    <div data-zeus-nav></div>
+
+    <main class="zeus-doc-shell">
+      <section class="zeus-doc-hero">
+        <div class="aura-container zeus-doc-hero__grid">
+          <article class="aura-card zeus-doc-panel">
+            <p class="aura-eyebrow">Guidelines oficiais</p>
+            <h1 class="aura-title-xl">As regras que mantem o Zeus Project coerente.</h1>
+            <p class="aura-copy-lg">
+              Esta pagina resume o contrato visual, operacional e narrativo do sistema.
+              Ela existe para impedir que modulos novos virem projetos paralelos.
+            </p>
+            <div class="zeus-doc-actions">
+              <a class="aura-button aura-button-primary" href="../apps/aura-system/index.html">Abrir Aura System</a>
+              <a class="aura-button aura-button-secondary" href="./catalog.html">Ir para o Catalogo</a>
+            </div>
+          </article>
+
+          <article class="aura-card zeus-doc-list">
+            <div>
+              <p class="aura-eyebrow">Mandamentos</p>
+              <h2 class="aura-title-md">O que nunca deve se perder</h2>
+            </div>
+            <ul>
+              <li>Todo modulo deve manter a navbar unificada do Zeus.</li>
+              <li>Light e dark mode devem existir sem mudar a hierarquia do produto.</li>
+              <li>Interfaces precisam explicar o sistema para leigos antes de exigir acoes.</li>
+              <li>Nova tela nasce do Aura System, nao de CSS improvisado.</li>
+              <li>Estados de vazio, carregamento e feedback sao obrigatorios.</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="aura-container zeus-stat-grid">
+          <article class="aura-card zeus-stat-card">
+            <span class="aura-copy-sm">Metodologia</span>
+            <strong>Atomic</strong>
+            <p class="aura-copy">Atoms, molecules, organisms e templates como fluxo oficial.</p>
+          </article>
+          <article class="aura-card zeus-stat-card">
+            <span class="aura-copy-sm">Tema</span>
+            <strong>Dual mode</strong>
+            <p class="aura-copy">Mesmo sistema em light e dark, sem virar dois produtos.</p>
+          </article>
+          <article class="aura-card zeus-stat-card">
+            <span class="aura-copy-sm">Tom</span>
+            <strong>Humano</strong>
+            <p class="aura-copy">Clareza e orientacao antes de qualquer exibicao tecnica.</p>
+          </article>
+          <article class="aura-card zeus-stat-card">
+            <span class="aura-copy-sm">Navegacao</span>
+            <strong>Unificada</strong>
+            <p class="aura-copy">Toda pagina precisa acessar qualquer area do sistema.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="aura-section">
+        <div class="aura-container zeus-section-stack">
+          <article class="aura-card zeus-section-card">
+            <p class="aura-eyebrow">Design system</p>
+            <h2 class="aura-title-lg">Guidelines visuais</h2>
+            <div class="zeus-doc-grid">
+              <div class="zeus-doc-list">
+                <h3 class="aura-title-sm">Cor e contraste</h3>
+                <ul>
+                  <li>Azul existe para foco, CTA, progresso e navegacao ativa.</li>
+                  <li>Neutros dominam a base para passar estabilidade.</li>
+                  <li>Evite saturacao excessiva fora de momentos de acao.</li>
+                </ul>
+              </div>
+              <div class="zeus-doc-list">
+                <h3 class="aura-title-sm">Tipografia e leitura</h3>
+                <ul>
+                  <li>Titulos curtos e claros.</li>
+                  <li>Texto de corpo orienta, nao performa.</li>
+                  <li>Mono so aparece em caminhos, tokens e trechos tecnicos.</li>
+                </ul>
+              </div>
+              <div class="zeus-doc-list">
+                <h3 class="aura-title-sm">Espacamento e ritmo</h3>
+                <ul>
+                  <li>Se a pagina parece ruim, primeiro revise espacos.</li>
+                  <li>Cards precisam de respiro generoso.</li>
+                  <li>Secoes devem respirar como blocos independentes.</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="aura-card zeus-section-card">
+            <p class="aura-eyebrow">Produto</p>
+            <h2 class="aura-title-lg">Guidelines de UX e sistema</h2>
+            <div class="zeus-doc-grid">
+              <div class="zeus-doc-list">
+                <h3 class="aura-title-sm">Explicacao para leigos</h3>
+                <ul>
+                  <li>Explique primeiro o que a pagina faz.</li>
+                  <li>Depois mostre opcoes e proximos passos.</li>
+                  <li>Nao espere que o usuario conheca skills, squads ou agentes.</li>
+                </ul>
+              </div>
+              <div class="zeus-doc-list">
+                <h3 class="aura-title-sm">Estados obrigatorios</h3>
+                <ul>
+                  <li>Loading com skeleton ou placeholder coerente.</li>
+                  <li>Empty state com explicacao e acao seguinte.</li>
+                  <li>Feedback de sucesso, alerta e erro com semantica clara.</li>
+                </ul>
+              </div>
+              <div class="zeus-doc-list">
+                <h3 class="aura-title-sm">Navegacao global</h3>
+                <ul>
+                  <li>Nenhuma pagina deve isolar o usuario.</li>
+                  <li>A mesma navbar precisa existir em todo modulo principal.</li>
+                  <li>O item atual precisa ficar evidente.</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="aura-card zeus-section-card">
+            <p class="aura-eyebrow">Tokens</p>
+            <h2 class="aura-title-lg">Uso recomendado dos principais tokens</h2>
+            <div class="zeus-token-table">
+              <div class="zeus-token-row">
+                <strong>Cor primaria</strong>
+                <p class="aura-copy">Use para CTA, foco, links relevantes, filtros ativos e destaques principais.</p>
+                <code>--aura-color-primary</code>
+              </div>
+              <div class="zeus-token-row">
+                <strong>Surface / Card</strong>
+                <p class="aura-copy">Base de paineis, cards, listas e areas de interface.</p>
+                <code>--aura-color-surface / --aura-color-card</code>
+              </div>
+              <div class="zeus-token-row">
+                <strong>Muted</strong>
+                <p class="aura-copy">Texto auxiliar, descricoes, metadados e explicacoes secundarias.</p>
+                <code>--aura-color-muted</code>
+              </div>
+              <div class="zeus-token-row">
+                <strong>Motion</strong>
+                <p class="aura-copy">Use `fast` para hover, `base` para transicao de estado e `slow` para hero e spotlight.</p>
+                <code>--aura-duration-*</code>
+              </div>
+              <div class="zeus-token-row">
+                <strong>Radius</strong>
+                <p class="aura-copy">Campos compactos em `md`, cards em `lg/xl` e botoes em `pill`.</p>
+                <code>--aura-radius-*</code>
+              </div>
+            </div>
+          </article>
+
+          <article class="aura-card zeus-section-card">
+            <p class="aura-eyebrow">Checklist</p>
+            <h2 class="aura-title-lg">O que validar antes de considerar uma pagina pronta</h2>
+            <div class="zeus-doc-grid">
+              <div class="zeus-note">
+                <strong>1. Navbar</strong>
+                <p class="aura-copy-sm">A pagina permite ir para qualquer area principal do Zeus?</p>
+              </div>
+              <div class="zeus-note">
+                <strong>2. Tema</strong>
+                <p class="aura-copy-sm">Light e dark preservam legibilidade e hierarquia?</p>
+              </div>
+              <div class="zeus-note">
+                <strong>3. Clareza</strong>
+                <p class="aura-copy-sm">Uma pessoa leiga entende a pagina em poucos segundos?</p>
+              </div>
+              <div class="zeus-note">
+                <strong>4. Estados</strong>
+                <p class="aura-copy-sm">Loading, vazio, sucesso e erro foram considerados?</p>
+              </div>
+              <div class="zeus-note">
+                <strong>5. Atomicidade</strong>
+                <p class="aura-copy-sm">A pagina reutiliza atoms, molecules e organisms oficiais?</p>
+              </div>
+              <div class="zeus-note">
+                <strong>6. Mobile</strong>
+                <p class="aura-copy-sm">A tela continua clara e navegavel no celular?</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="../shared/zeus-nav.js"></script>
+  </body>
+</html>

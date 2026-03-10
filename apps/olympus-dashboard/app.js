@@ -352,10 +352,34 @@ function renderSoulPage() {
   document.querySelector("#soulIntro").textContent = state.soul.intro;
   document.querySelector("#soulHeadline").textContent = state.soul.identity.headline;
   document.querySelector("#soulBody").textContent = state.soul.identity.body;
+  renderSoulKpis();
   renderSimpleList("#principlesList", state.soul.principles);
   renderSimpleList("#decisionsList", state.soul.decisions);
   renderPillars();
   renderTimeline();
+}
+
+function renderSoulKpis() {
+  const container = document.querySelector("#soulKpis");
+  if (!container) return;
+
+  const items = [
+    { label: "Principios", value: state.soul.principles.length },
+    { label: "Pilares", value: state.soul.pillars.length },
+    { label: "Decisoes", value: state.soul.decisions.length },
+    { label: "Marcos", value: state.soul.timeline.length },
+  ];
+
+  container.innerHTML = items
+    .map(
+      (item) => `
+        <article class="hero-kpi soul-kpi">
+          <span class="hero-kpi-label">${item.label}</span>
+          <strong class="hero-kpi-value">${item.value}</strong>
+        </article>
+      `,
+    )
+    .join("");
 }
 
 function renderSimpleList(selector, items) {

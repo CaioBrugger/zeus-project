@@ -6,29 +6,8 @@
     <title>Zeus Project | Aura System</title>
     <link rel="stylesheet" href="./styles/template.css" />
   </head>
-  <body>
-    <header class="aura-nav">
-      <div class="aura-container aura-nav__inner">
-        <a class="aura-nav__brand" href="../../index.html">
-          <span class="aura-nav__mark">⚡</span>
-          <span>
-            <strong>Zeus Project</strong>
-            <small>Aura System</small>
-          </span>
-        </a>
-        <nav class="aura-nav__links">
-          <a href="../../index.html">Home</a>
-          <a href="../olympus-dashboard/index.html">Olympus</a>
-          <a href="../olympus-dashboard/soul.html">Soul</a>
-          <a href="./index.html" aria-current="page">Aura System</a>
-          <a href="./docs/design-system.md">Guidelines</a>
-        </nav>
-        <button class="aura-theme-toggle" id="themeToggle" type="button" aria-label="Alternar tema">
-          <span class="aura-theme-toggle__icon">◐</span>
-          <span id="themeToggleLabel">Dark mode</span>
-        </button>
-      </div>
-    </header>
+  <body data-nav-root="../.." data-nav-current="aura">
+    <div data-zeus-nav></div>
 
     <main id="top">
       <section class="aura-hero aura-hero--system">
@@ -45,6 +24,12 @@
               <a class="aura-button aura-button-primary" href="#system-overview">Explorar sistema</a>
               <a class="aura-button aura-button-secondary" href="#guidelines">Ver guidelines</a>
               <a class="aura-shiny-cta" href="./docs/design-system.md">Abrir documentacao</a>
+            </div>
+            <div class="aura-toolbar">
+              <button class="aura-theme-toggle" data-theme-toggle type="button" aria-label="Alternar tema">
+                <span class="aura-theme-toggle__icon">◐</span>
+                <span data-theme-label>Dark mode</span>
+              </button>
             </div>
             <div class="aura-proof">
               <div class="aura-proof__avatar"></div>
@@ -455,6 +440,6 @@
       </div>
     </footer>
 
-    <script src="./app.js" type="module"></script>
+    <script src="../../shared/zeus-nav.js"></script>
   </body>
 </html>

@@ -14,11 +14,12 @@
       @import url("./apps/aura-system/styles/template.css");
 
       :root {
-        --zeus-bg: linear-gradient(180deg, #ffffff 0%, #f6faff 50%, #ecf3ff 100%);
+        --zeus-bg: var(--aura-gradient-page);
       }
 
       body {
         background: var(--zeus-bg);
+        color: var(--aura-color-fg);
       }
 
       .zeus-home {
@@ -41,7 +42,7 @@
         aspect-ratio: 16 / 11;
         border-radius: 1.75rem;
         overflow: hidden;
-        border: 1px solid rgba(37, 99, 235, 0.12);
+        border: 1px solid color-mix(in srgb, var(--aura-color-primary) 16%, var(--aura-color-border));
         box-shadow: var(--aura-shadow-lg);
       }
 
@@ -75,6 +76,11 @@
         gap: 1.25rem;
       }
 
+      .zeus-card p,
+      .zeus-panel p {
+        color: var(--aura-color-muted);
+      }
+
       @media (max-width: 980px) {
         .zeus-hero,
         .zeus-grid,
@@ -84,21 +90,8 @@
       }
     </style>
   </head>
-  <body>
-    <header class="aura-nav">
-      <div class="aura-container aura-nav__inner">
-        <a class="aura-nav__brand" href="./index.html">
-          <span class="aura-nav__mark">⚡</span>
-          <span>Zeus Project</span>
-        </a>
-        <nav class="aura-nav__links">
-          <a href="./index.html">Home</a>
-          <a href="./apps/olympus-dashboard/">Olympus</a>
-          <a href="./apps/olympus-dashboard/soul.html">Soul</a>
-          <a href="./apps/aura-system/">Aura System</a>
-        </nav>
-      </div>
-    </header>
+  <body data-nav-root="." data-nav-current="home">
+    <div data-zeus-nav></div>
 
     <main class="zeus-home">
       <section class="aura-container zeus-hero">
@@ -152,5 +145,6 @@
         </article>
       </section>
     </main>
+    <script src="./shared/zeus-nav.js"></script>
   </body>
 </html>

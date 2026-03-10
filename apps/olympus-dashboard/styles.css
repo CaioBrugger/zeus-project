@@ -1,14 +1,14 @@
 @import url("../aura-system/styles/template.css");
 
 :root {
-  --bg: #0b1020;
-  --panel: rgba(255, 255, 255, 0.78);
-  --line: rgba(37, 99, 235, 0.12);
-  --line-strong: rgba(37, 99, 235, 0.28);
+  --bg: var(--aura-gradient-page);
+  --panel: color-mix(in srgb, var(--aura-color-card) 92%, transparent);
+  --line: color-mix(in srgb, var(--aura-color-primary) 14%, var(--aura-color-border));
+  --line-strong: color-mix(in srgb, var(--aura-color-primary) 30%, var(--aura-color-border-strong));
   --gold: var(--aura-color-primary);
-  --gold-soft: #7ea7ff;
-  --ivory: #0f172a;
-  --mist: #475569;
+  --gold-soft: var(--aura-color-primary-soft);
+  --ivory: var(--aura-color-fg);
+  --mist: var(--aura-color-muted);
   --shadow: var(--aura-shadow-lg);
   --radius-xl: 28px;
   --radius-lg: 20px;
@@ -22,13 +22,10 @@ body {
   margin: 0;
   font-family: var(--aura-font-sans);
   color: var(--ivory);
-  background:
-    radial-gradient(circle at 15% 10%, rgba(59, 130, 246, 0.14), transparent 20%),
-    radial-gradient(circle at 82% 12%, rgba(37, 99, 235, 0.1), transparent 22%),
-    radial-gradient(circle at 50% 100%, rgba(148, 163, 184, 0.08), transparent 20%),
-    linear-gradient(180deg, #ffffff 0%, #f8fbff 44%, #eef4ff 100%);
+  background: var(--bg);
   min-height: 100vh;
   overflow-x: hidden;
+  transition: background var(--aura-duration-base) var(--aura-ease-out), color var(--aura-duration-base) var(--aura-ease-out);
 }
 
 body::before {
@@ -37,11 +34,11 @@ body::before {
   inset: 0;
   pointer-events: none;
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+    linear-gradient(color-mix(in srgb, var(--aura-color-border) 30%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--aura-color-border) 30%, transparent) 1px, transparent 1px);
   background-size: 72px 72px;
   mask-image: radial-gradient(circle at center, black 38%, transparent 88%);
-  opacity: 0.6;
+  opacity: 0.45;
 }
 
 .ambient {
@@ -54,7 +51,7 @@ body::before {
 .ambient-a {
   width: 340px;
   height: 340px;
-  background: rgba(59, 130, 246, 0.16);
+  background: color-mix(in srgb, var(--aura-color-primary-soft) 26%, transparent);
   top: 40px;
   left: -90px;
 }
@@ -62,7 +59,7 @@ body::before {
 .ambient-b {
   width: 380px;
   height: 380px;
-  background: rgba(37, 99, 235, 0.08);
+  background: color-mix(in srgb, var(--aura-color-primary) 16%, transparent);
   top: 260px;
   right: -120px;
 }
@@ -71,7 +68,7 @@ body::before {
   position: relative;
   width: min(1480px, calc(100% - 32px));
   margin: 0 auto;
-  padding: 28px 0 60px;
+  padding: 0 0 60px;
 }
 
 .topbar,
@@ -90,64 +87,11 @@ body::before {
   backdrop-filter: blur(16px);
 }
 
-.topbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-  border-radius: 999px;
-  padding: 12px 16px 12px 14px;
-  margin-bottom: 24px;
-}
-
-.brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  color: var(--ivory);
-  text-decoration: none;
-}
-
-.brand strong,
-.brand small { display: block; }
-.brand strong { font-size: 0.98rem; }
-.brand small { color: var(--mist); font-size: 0.78rem; }
-
-.brand-mark {
-  display: grid;
-  place-items: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  color: white;
-  background: var(--aura-gradient-primary);
-}
-
-.nav-links {
-  display: inline-flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.nav-links a {
-  color: var(--mist);
-  text-decoration: none;
-  padding: 10px 14px;
-  border-radius: 999px;
-  transition: background 180ms ease, color 180ms ease, transform 180ms ease;
-}
-
-.nav-links a:hover,
-.nav-links a.is-active {
-  color: var(--ivory);
-  background: rgba(255, 255, 255, 0.05);
-  transform: translateY(-1px);
-}
-
 .hero-v2,
 .section-grid,
 .explorer-layout,
 .soul-hero,
+.soul-identity-grid,
 .soul-grid {
   display: grid;
   gap: 24px;
@@ -155,13 +99,18 @@ body::before {
 
 .hero-v2,
 .soul-hero {
-  grid-template-columns: 1.05fr 0.95fr;
-  margin-bottom: 24px;
+  grid-template-columns: minmax(0, 1.18fr) minmax(420px, 0.82fr);
+  margin-bottom: 28px;
 }
 
 .section-grid {
   grid-template-columns: 1.15fr 0.85fr;
   margin-bottom: 24px;
+}
+
+.soul-identity-grid {
+  grid-template-columns: minmax(0, 1.08fr) minmax(360px, 0.92fr);
+  margin-bottom: 28px;
 }
 
 .explorer-layout {
@@ -173,9 +122,28 @@ body::before {
   grid-template-columns: 1fr 1fr;
 }
 
+.soul-grid--desktop {
+  grid-template-columns: minmax(0, 1.02fr) minmax(0, 0.98fr);
+  align-items: start;
+}
+
 .hero-panel,
 .panel {
   border-radius: var(--radius-xl);
+}
+
+.soul-hero-panel {
+  min-height: 100%;
+}
+
+.soul-hero-panel--story {
+  padding: 42px;
+  border-radius: 32px;
+}
+
+.soul-hero-panel--visual {
+  padding: 22px;
+  border-radius: 32px;
 }
 
 .hero-copy,
@@ -266,7 +234,7 @@ h2 { font-size: clamp(1.5rem, 2.6vw, 2.5rem); }
 .button.secondary {
   border: 1px solid var(--aura-color-border);
   color: var(--ivory);
-  background: rgba(255, 255, 255, 0.82);
+  background: color-mix(in srgb, var(--aura-color-card) 92%, transparent);
 }
 
 .hero-kpis {
@@ -303,7 +271,7 @@ h2 { font-size: clamp(1.5rem, 2.6vw, 2.5rem); }
 
 .hero-art-frame {
   aspect-ratio: 16 / 10;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid color-mix(in srgb, var(--aura-color-primary) 14%, var(--aura-color-border));
 }
 
 .hero-art-frame img,
@@ -321,7 +289,7 @@ h2 { font-size: clamp(1.5rem, 2.6vw, 2.5rem); }
   max-width: 240px;
   padding: 16px 18px;
   border-radius: 22px;
-  background: rgba(255, 255, 255, 0.9);
+  background: color-mix(in srgb, var(--aura-color-card) 94%, transparent);
   border: 1px solid var(--aura-color-border);
 }
 
@@ -329,6 +297,155 @@ h2 { font-size: clamp(1.5rem, 2.6vw, 2.5rem); }
   display: block;
   font-size: 1.4rem;
   margin-bottom: 8px;
+}
+
+.soul-hero-copy {
+  display: grid;
+  gap: 22px;
+}
+
+.soul-intro-copy {
+  max-width: 62ch;
+  font-size: 1.08rem;
+}
+
+.soul-kpis {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.soul-kpi {
+  padding: 18px;
+  border-radius: 18px;
+  background: color-mix(in srgb, var(--aura-color-surface-strong) 90%, transparent);
+  border: 1px solid var(--aura-color-border);
+  box-shadow: none;
+}
+
+.soul-command-board {
+  display: grid;
+  grid-template-rows: auto auto;
+  gap: 16px;
+}
+
+.soul-command-board__art {
+  aspect-ratio: 4 / 3.6;
+  overflow: hidden;
+  border-radius: 30px;
+  border: 1px solid color-mix(in srgb, var(--aura-color-primary) 14%, var(--aura-color-border));
+  box-shadow: var(--aura-shadow-lg);
+}
+
+.soul-command-board__art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.soul-command-board__summary {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+.soul-summary-block {
+  padding: 18px 20px;
+  border-radius: 18px;
+  background: color-mix(in srgb, var(--aura-color-surface-strong) 88%, transparent);
+  border: 1px solid var(--aura-color-border);
+}
+
+.soul-summary-block strong {
+  display: block;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.soul-summary-block p {
+  margin: 0;
+  color: var(--mist);
+  line-height: 1.7;
+}
+
+.soul-bullet-list {
+  margin: 0;
+  padding-left: 1.15rem;
+  color: var(--mist);
+  line-height: 1.8;
+}
+
+.soul-identity-panel,
+.soul-reading-panel,
+.soul-section-panel {
+  padding: 32px;
+  border-radius: 28px;
+}
+
+.soul-section-panel h2,
+.soul-identity-panel h2,
+.soul-reading-panel h2 {
+  margin-bottom: 14px;
+}
+
+.soul-executive-points {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.soul-status-stack {
+  display: grid;
+  gap: 14px;
+}
+
+.soul-status-card {
+  padding: 18px 20px;
+  border-radius: 18px;
+  background: color-mix(in srgb, var(--aura-color-surface-strong) 90%, transparent);
+  border: 1px solid var(--aura-color-border);
+}
+
+.soul-status-card strong {
+  display: block;
+  font-size: 1.35rem;
+  margin: 2px 0 8px;
+}
+
+.soul-status-card p {
+  margin: 0;
+  color: var(--mist);
+  line-height: 1.7;
+}
+
+.soul-section-panel--principles,
+.soul-section-panel--pillars {
+  min-height: 100%;
+}
+
+.soul-section-panel--decisions,
+.soul-section-panel--timeline {
+  min-height: 100%;
+}
+
+.soul-grid--desktop .soul-section-panel--principles {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.soul-grid--desktop .soul-section-panel--pillars {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.soul-grid--desktop .soul-section-panel--decisions {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.soul-grid--desktop .soul-section-panel--timeline {
+  grid-column: 2;
+  grid-row: 2;
 }
 
 .section-heading {
@@ -355,7 +472,11 @@ h2 { font-size: clamp(1.5rem, 2.6vw, 2.5rem); }
 }
 
 .journey-tab.is-active {
-  background: linear-gradient(135deg, rgba(59, 130, 246, 0.12), rgba(37, 99, 235, 0.08));
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--aura-color-primary-soft) 16%, transparent),
+    color-mix(in srgb, var(--aura-color-primary) 12%, transparent)
+  );
   border-color: var(--line-strong);
 }
 
@@ -368,8 +489,8 @@ h2 { font-size: clamp(1.5rem, 2.6vw, 2.5rem); }
 .repo-entry {
   border-radius: 22px;
   padding: 18px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: color-mix(in srgb, var(--aura-color-surface-strong) 86%, transparent);
+  border: 1px solid var(--aura-color-border);
 }
 
 .journey-stage h3 {
@@ -390,6 +511,11 @@ h2 { font-size: clamp(1.5rem, 2.6vw, 2.5rem); }
   gap: 14px;
 }
 
+.soul-reading-panel .thinking-step {
+  background: color-mix(in srgb, var(--aura-color-surface-strong) 86%, transparent);
+  border: 1px solid var(--aura-color-border);
+}
+
 .journey-step {
   display: grid;
   grid-template-columns: 44px 1fr;
@@ -403,7 +529,7 @@ h2 { font-size: clamp(1.5rem, 2.6vw, 2.5rem); }
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: rgba(217, 184, 106, 0.12);
+  background: color-mix(in srgb, var(--aura-color-primary) 12%, transparent);
   color: var(--gold-soft);
   font-weight: 800;
 }
@@ -455,7 +581,7 @@ h2 { font-size: clamp(1.5rem, 2.6vw, 2.5rem); }
   height: 10px;
   border-radius: 999px;
   overflow: hidden;
-  background: rgba(255, 255, 255, 0.06);
+  background: color-mix(in srgb, var(--aura-color-surface-strong) 92%, transparent);
 }
 
 .bar-fill {
@@ -508,7 +634,7 @@ h2 { font-size: clamp(1.5rem, 2.6vw, 2.5rem); }
   min-height: 30px;
   padding: 0 10px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.06);
+  background: color-mix(in srgb, var(--aura-color-surface-strong) 92%, transparent);
   color: var(--gold-soft);
   font-size: 0.78rem;
 }
@@ -533,11 +659,18 @@ h2 { font-size: clamp(1.5rem, 2.6vw, 2.5rem); }
   min-height: 48px;
   width: 100%;
   border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  background: rgba(8, 13, 24, 0.95);
+  border: 1px solid var(--aura-color-border);
+  background: color-mix(in srgb, var(--aura-color-card) 96%, transparent);
   color: var(--ivory);
   font: inherit;
   padding: 0 14px;
+}
+
+.field input:focus,
+.field select:focus {
+  outline: none;
+  border-color: color-mix(in srgb, var(--aura-color-primary) 44%, transparent);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--aura-color-primary) 12%, transparent);
 }
 
 .cards-grid {
@@ -602,6 +735,7 @@ h2 { font-size: clamp(1.5rem, 2.6vw, 2.5rem); }
   .section-grid,
   .explorer-layout,
   .soul-hero,
+  .soul-identity-grid,
   .soul-grid,
   .radar-grid { grid-template-columns: 1fr; }
 
@@ -610,8 +744,21 @@ h2 { font-size: clamp(1.5rem, 2.6vw, 2.5rem); }
 
 @media (max-width: 960px) {
   .hero-kpis,
+  .soul-kpis,
   .cards-grid,
   .persona-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+  .soul-executive-points {
+    grid-template-columns: 1fr;
+  }
+
+  .soul-hero-panel--story,
+  .soul-hero-panel--visual,
+  .soul-identity-panel,
+  .soul-reading-panel,
+  .soul-section-panel {
+    padding: 24px;
+  }
 }
 
 @media (max-width: 760px) {
@@ -620,19 +767,369 @@ h2 { font-size: clamp(1.5rem, 2.6vw, 2.5rem); }
     padding-top: 18px;
   }
 
-  .topbar {
-    border-radius: 28px;
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
   .hero-copy,
   .panel { padding: 20px; }
 
   .hero-kpis,
+  .soul-kpis,
   .cards-grid,
   .persona-grid,
   .filters { grid-template-columns: 1fr; }
 
   h1 { max-width: none; }
+
+  .soul-command-board__art {
+    aspect-ratio: 4 / 4.4;
+  }
+}
+
+/* Soul v3: landing + dashboard */
+.soul-shell {
+  padding-top: 18px;
+}
+
+.soul-stage,
+.soul-overview,
+.soul-dashboard-grid {
+  display: grid;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.soul-stage {
+  grid-template-columns: minmax(0, 1.12fr) minmax(440px, 0.88fr);
+  align-items: stretch;
+}
+
+.soul-overview {
+  grid-template-columns: minmax(0, 1.08fr) minmax(360px, 0.92fr);
+}
+
+.soul-dashboard-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.soul-stage__hero,
+.soul-stage__visual,
+.soul-overview__mission,
+.soul-overview__signals,
+.soul-panel {
+  position: relative;
+  overflow: hidden;
+  padding: 30px;
+  border-radius: 30px;
+}
+
+.soul-stage__hero::before,
+.soul-stage__visual::before,
+.soul-overview__mission::before,
+.soul-overview__signals::before,
+.soul-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at top right, color-mix(in srgb, var(--aura-color-primary-soft) 14%, transparent), transparent 34%);
+  pointer-events: none;
+}
+
+.soul-stage__hero {
+  padding: 42px;
+}
+
+.soul-stage__copy {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 20px;
+}
+
+.soul-stage__title {
+  font-size: clamp(2.8rem, 5vw, 5rem);
+  line-height: 0.98;
+  max-width: 11ch;
+}
+
+.soul-stage__lead {
+  max-width: 56ch;
+}
+
+.soul-stage__intro {
+  max-width: 52ch;
+  margin: 0;
+  color: var(--gold-soft);
+  line-height: 1.8;
+  font-size: 0.98rem;
+}
+
+.soul-stage__rail {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 12px;
+}
+
+.soul-kpi {
+  padding: 18px;
+  border-radius: 20px;
+  background: color-mix(in srgb, var(--aura-color-surface-strong) 92%, transparent);
+  border: 1px solid var(--aura-color-border);
+  box-shadow: none;
+  transition: transform var(--aura-duration-base) var(--aura-ease-out), border-color var(--aura-duration-base) var(--aura-ease-out);
+}
+
+.soul-kpi:hover {
+  transform: translateY(-4px);
+  border-color: var(--line-strong);
+}
+
+.soul-stage__visual {
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--aura-color-card) 88%, transparent), color-mix(in srgb, var(--aura-color-surface-strong) 92%, transparent));
+}
+
+.soul-orbit {
+  position: relative;
+  min-height: 340px;
+  display: grid;
+  place-items: center;
+  border-radius: 28px;
+  overflow: hidden;
+  border: 1px solid var(--aura-color-border);
+  background:
+    radial-gradient(circle at center, color-mix(in srgb, var(--aura-color-primary-soft) 14%, transparent), transparent 42%),
+    linear-gradient(180deg, color-mix(in srgb, var(--aura-color-surface-strong) 92%, transparent), transparent);
+}
+
+.soul-orbit__rings,
+.soul-orbit__rings::before,
+.soul-orbit__rings::after {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid color-mix(in srgb, var(--aura-color-primary) 18%, transparent);
+}
+
+.soul-orbit__rings {
+  width: 160px;
+  height: 160px;
+  animation: soul-spin 18s linear infinite;
+}
+
+.soul-orbit__rings::before,
+.soul-orbit__rings::after {
+  content: "";
+}
+
+.soul-orbit__rings::before {
+  inset: -48px;
+}
+
+.soul-orbit__rings::after {
+  inset: -98px;
+}
+
+.soul-orbit__core {
+  position: relative;
+  z-index: 2;
+  width: 124px;
+  height: 124px;
+  display: grid;
+  place-items: center;
+  border-radius: 30px;
+  background: var(--aura-gradient-primary);
+  color: white;
+  font-family: var(--aura-font-display);
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  box-shadow: var(--aura-shadow-lg);
+}
+
+.soul-orbit__node {
+  position: absolute;
+  z-index: 2;
+  min-height: 2.3rem;
+  padding: 0 14px;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--aura-color-card) 94%, transparent);
+  border: 1px solid var(--aura-color-border);
+  font-size: 0.82rem;
+  box-shadow: var(--aura-shadow-sm);
+  animation: soul-float 5s ease-in-out infinite;
+}
+
+.soul-orbit__node--a { top: 22%; left: 10%; }
+.soul-orbit__node--b { top: 18%; right: 10%; animation-delay: 0.9s; }
+.soul-orbit__node--c { bottom: 24%; left: 12%; animation-delay: 1.8s; }
+.soul-orbit__node--d { bottom: 18%; right: 8%; animation-delay: 2.7s; }
+
+.soul-stage__visual-footer {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.soul-stage__image {
+  aspect-ratio: 16 / 11;
+  overflow: hidden;
+  border-radius: 24px;
+  border: 1px solid var(--aura-color-border);
+}
+
+.soul-stage__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.soul-stage__status {
+  padding: 20px;
+  border-radius: 24px;
+  border: 1px solid var(--aura-color-border);
+  background: color-mix(in srgb, var(--aura-color-surface-strong) 92%, transparent);
+}
+
+.soul-stage__status strong {
+  display: block;
+  margin: 6px 0 10px;
+  font-size: 1.32rem;
+}
+
+.soul-stage__status p {
+  margin: 0;
+  color: var(--mist);
+  line-height: 1.75;
+}
+
+.soul-mission-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.soul-signal-stack {
+  display: grid;
+  gap: 14px;
+}
+
+.soul-signal-card {
+  padding: 18px 20px;
+  border-radius: 20px;
+  background: color-mix(in srgb, var(--aura-color-surface-strong) 92%, transparent);
+  border: 1px solid var(--aura-color-border);
+}
+
+.soul-signal-card__head {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.soul-signal-card__head strong {
+  font-size: 1rem;
+}
+
+.soul-signal-card__head span {
+  color: var(--gold-soft);
+  font-weight: 800;
+}
+
+.soul-signal-card p {
+  margin: 12px 0 0;
+  color: var(--mist);
+  line-height: 1.7;
+}
+
+.soul-bar-track {
+  height: 12px;
+}
+
+.soul-bar-fill {
+  animation: soul-grow 1.4s var(--aura-ease-out);
+}
+
+.soul-panel--timeline {
+  grid-column: 1 / -1;
+}
+
+.soul-timeline-list {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.soul-timeline-item {
+  position: relative;
+  min-height: 160px;
+  padding-top: 48px;
+}
+
+.soul-timeline-item::before {
+  content: "";
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  right: 18px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--aura-color-primary-soft), transparent);
+}
+
+.soul-timeline-item::after {
+  content: "";
+  position: absolute;
+  top: 11px;
+  left: 18px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--aura-gradient-primary);
+  box-shadow: 0 0 0 6px color-mix(in srgb, var(--aura-color-primary) 12%, transparent);
+}
+
+@keyframes soul-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes soul-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes soul-grow {
+  from { width: 0; }
+}
+
+@media (max-width: 1240px) {
+  .soul-stage,
+  .soul-overview,
+  .soul-dashboard-grid,
+  .soul-timeline-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 960px) {
+  .soul-stage__rail,
+  .soul-mission-grid,
+  .soul-stage__visual-footer {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .soul-stage__hero,
+  .soul-stage__visual,
+  .soul-overview__mission,
+  .soul-overview__signals,
+  .soul-panel {
+    padding: 22px;
+  }
+
+  .soul-stage__title {
+    max-width: none;
+  }
 }

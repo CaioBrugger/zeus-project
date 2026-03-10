@@ -12,27 +12,12 @@
     />
     <link rel="stylesheet" href="./styles.css" />
   </head>
-  <body data-page="dashboard">
+  <body data-page="dashboard" data-nav-root="../.." data-nav-current="olympus">
     <div class="ambient ambient-a"></div>
     <div class="ambient ambient-b"></div>
+    <div data-zeus-nav></div>
 
     <div class="shell">
-      <header class="topbar">
-        <a class="brand" href="./index.html">
-          <span class="brand-mark">⚡</span>
-          <span>
-            <strong>Zeus Project</strong>
-            <small>Olympus Command</small>
-          </span>
-        </a>
-        <nav class="nav-links">
-          <a href="./index.html" class="is-active">Dashboard</a>
-          <a href="./soul.html">Soul</a>
-          <a href="../aura-system/index.html">Aura System</a>
-          <a href="../../docs/zeus-catalog.md">Catalogo</a>
-        </nav>
-      </header>
-
       <section class="hero-v2">
         <div class="hero-panel hero-copy">
           <p class="eyebrow">Sistema para humanos</p>
@@ -229,6 +214,7 @@
       </article>
     </template>
 
+    <script src="../../shared/zeus-nav.js"></script>
     <script src="./app.js" type="module"></script>
   </body>
 </html>

@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zeus Project | Catalogo</title>
+    <link rel="stylesheet" href="./zeus-pages.css" />
+  </head>
+  <body data-nav-root=".." data-nav-current="catalog">
+    <div data-zeus-nav></div>
+
+    <main class="zeus-doc-shell">
+      <section class="zeus-doc-hero">
+        <div class="aura-container zeus-doc-hero__grid">
+          <article class="aura-card zeus-doc-panel">
+            <p class="aura-eyebrow">Catalogo do ecossistema</p>
+            <h1 class="aura-title-xl">Mapa vivo de skills, agentes, squads e repositorios.</h1>
+            <p class="aura-copy-lg">
+              Esta pagina traduz o inventario real do projeto para uma interface filtravel,
+              mantendo contexto humano e acesso rapido ao que existe no sistema.
+            </p>
+            <div class="zeus-doc-actions">
+              <a class="aura-button aura-button-primary" href="../apps/olympus-dashboard/index.html">Abrir Olympus</a>
+              <a class="aura-button aura-button-secondary" href="./guidelines.html">Ver Guidelines</a>
+            </div>
+          </article>
+
+          <article class="aura-card zeus-doc-list">
+            <div>
+              <p class="aura-eyebrow">Como usar</p>
+              <h2 class="aura-title-md">Busque por objetivo, nao por nome decorado</h2>
+            </div>
+            <ul>
+              <li>Filtre por tipo para focar em skills, agentes, squads ou repositorios.</li>
+              <li>Filtre por repositorio para entender de onde cada capacidade vem.</li>
+              <li>Use a descricao para descobrir quando o Zeus deveria chamar cada item.</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="aura-container zeus-stat-grid" id="catalogStats"></div>
+      </section>
+
+      <section class="aura-section">
+        <div class="aura-container zeus-catalog-layout">
+          <aside class="aura-card zeus-filter-panel">
+            <div class="zeus-filter-stack">
+              <div>
+                <p class="aura-eyebrow">Filtros</p>
+                <h2 class="aura-title-md">Refine o catalogo</h2>
+              </div>
+              <label class="aura-field">
+                <span>Buscar</span>
+                <input id="catalogSearch" type="search" placeholder="ui, memory, mcp, roadmap..." />
+              </label>
+              <label class="aura-field">
+                <span>Tipo</span>
+                <select id="catalogType">
+                  <option value="all">Todos</option>
+                  <option value="skill">Skills</option>
+                  <option value="agent">Agentes</option>
+                  <option value="squad">Squads</option>
+                  <option value="repository">Repositorios</option>
+                </select>
+              </label>
+              <label class="aura-field">
+                <span>Repositorio</span>
+                <select id="catalogRepo">
+                  <option value="all">Todos</option>
+                </select>
+              </label>
+              <div class="zeus-filter-actions">
+                <button class="aura-button aura-button-primary" id="catalogReset" type="button">Limpar filtros</button>
+              </div>
+            </div>
+          </aside>
+
+          <div class="zeus-section-stack">
+            <div class="zeus-filter-row">
+              <div class="zeus-chip-row" id="catalogChips"></div>
+            </div>
+            <div id="catalogResultsCount" class="aura-copy"></div>
+            <div class="zeus-catalog-results" id="catalogResults"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <template id="catalogStatTemplate">
+      <article class="aura-card zeus-stat-card">
+        <span class="aura-copy-sm"></span>
+        <strong></strong>
+        <p class="aura-copy"></p>
+      </article>
+    </template>
+
+    <template id="catalogCardTemplate">
+      <article class="aura-card zeus-catalog-card">
+        <div class="zeus-catalog-card__meta">
+          <span class="zeus-pill catalog-type"></span>
+          <span class="zeus-pill zeus-pill--subtle catalog-repo"></span>
+        </div>
+        <h3 class="aura-title-md catalog-name"></h3>
+        <p class="aura-copy catalog-description"></p>
+        <code class="aura-code-inline zeus-catalog-path"></code>
+      </article>
+    </template>
+
+    <script src="../shared/zeus-nav.js"></script>
+    <script src="./catalog.js" type="module"></script>
+  </body>
+</html>
