@@ -23,6 +23,42 @@ Hoje ele combina:
 - dashboards para pessoas tecnicas e nao tecnicas
 - starters para novas paginas e novas interfaces
 
+## Instalar Em Outros Projetos
+
+Agora o repositório tambem possui uma CLI simples para instalar a base do Zeus em outros projetos.
+
+O caminho mais simples para leigos e:
+
+```bash
+npx github:CaioBrugger/zeus-project init .
+```
+
+Ou escolhendo nome e pasta:
+
+```bash
+npx github:CaioBrugger/zeus-project init ./meu-app --name "Meu App"
+```
+
+O que a CLI instala:
+
+- pasta `zeus/`
+- design system base
+- navbar unificada
+- dark mode global
+- `soul.md`
+- `guidelines.html`
+- `catalog.html`
+- uma home inicial do Zeus dentro do projeto de destino
+
+Arquivos gerados no projeto de destino:
+
+- `zeus/index.html`
+- `zeus/docs/guidelines.html`
+- `zeus/docs/catalog.html`
+- `zeus/soul.md`
+- `zeus/shared/zeus-nav.js`
+- `zeus/styles/*`
+
 ## Objetivos do Projeto
 
 Os objetivos principais sao:
