@@ -1,0 +1,125 @@
+{
+  "style": {
+    "theme": "Greek mythic editorial",
+    "portraitRatio": "4:5"
+  },
+  "personas": [
+    {
+      "id": "zeus",
+      "name": "Zeus",
+      "title": "Orquestrador Supremo",
+      "role": "Traduz pedidos humanos em rotas claras pelo ecossistema.",
+      "summary": "Quando voce nao sabe por onde comecar, Zeus decide qual stack, skill, squad ou agente deve assumir o trabalho.",
+      "systems": ["zeus", "AGENTS.md", "docs/zeus-catalog.md"],
+      "keywords": ["roteamento", "decisao", "entrada unica"],
+      "image": "./assets/portraits/zeus-orchestrator.png",
+      "accent": "storm"
+    },
+    {
+      "id": "mnemosyne",
+      "name": "Mnemosyne",
+      "title": "Guardia da Memoria",
+      "role": "Cuida da continuidade do projeto e do contexto historico.",
+      "summary": "Conecta o Soul, o Claude Mem e o historico do projeto para que decisoes importantes nao se percam.",
+      "systems": ["claude-mem", "soul.md", "mem-search"],
+      "keywords": ["memoria", "contexto", "continuidade"],
+      "image": "./assets/portraits/mnemosyne-memory-keeper.png",
+      "accent": "memory"
+    },
+    {
+      "id": "athena",
+      "name": "Athena",
+      "title": "Estrategista",
+      "role": "Planeja, estrutura fases e reduz caos.",
+      "summary": "Transforma ideias em roadmaps, fases e planos executaveis que qualquer time consegue seguir.",
+      "systems": ["gsd-roadmapper", "gsd-planner", "writing-plans"],
+      "keywords": ["roadmap", "planejamento", "estrategia"],
+      "image": "./assets/portraits/athena-strategist.png",
+      "accent": "wisdom"
+    },
+    {
+      "id": "hephaestus",
+      "name": "Hephaestus",
+      "title": "Arquiteto Construtor",
+      "role": "Forja interfaces, habilidades e ferramentas reais.",
+      "summary": "Assume a camada de construcao: UI, ferramentas, automacoes e componentes que tornam o sistema tangivel.",
+      "systems": ["ui-ux-pro-max", "frontend-design", "mcp-builder"],
+      "keywords": ["construcao", "ui", "ferramentas"],
+      "image": "./assets/portraits/hephaestus-builder.png",
+      "accent": "forge"
+    },
+    {
+      "id": "hermes",
+      "name": "Hermes",
+      "title": "Mensageiro das Integracoes",
+      "role": "Liga o projeto a MCPs, apps e fluxos externos.",
+      "summary": "Quando o sistema precisa falar com n8n, Gmail, GitHub, Slack ou qualquer integracao, Hermes assume.",
+      "systems": ["n8n-mcp", "connect-apps", "mcp-integrator"],
+      "keywords": ["integracoes", "mcp", "automacao"],
+      "image": "./assets/portraits/hermes-integrator.png",
+      "accent": "swift"
+    },
+    {
+      "id": "artemis",
+      "name": "Artemis",
+      "title": "Cacadora de Bugs",
+      "role": "Rastreia falhas e regressões com metodo.",
+      "summary": "Investiga erros, isola causas e organiza o caminho de correcao com foco em evidencias.",
+      "systems": ["gsd-debugger", "systematic-debugging", "smart-explore"],
+      "keywords": ["debug", "causa raiz", "observabilidade"],
+      "image": "./assets/portraits/artemis-debugger.png",
+      "accent": "hunt"
+    },
+    {
+      "id": "apollo",
+      "name": "Apollo",
+      "title": "Guardiao da Qualidade",
+      "role": "Revisa, verifica e ilumina riscos.",
+      "summary": "Valida se o que foi construido realmente atende o plano, com clareza tecnica e criterio de qualidade.",
+      "systems": ["code-reviewer", "gsd-verifier", "verification-before-completion"],
+      "keywords": ["review", "qualidade", "verificacao"],
+      "image": "./assets/portraits/apollo-quality.png",
+      "accent": "sun"
+    },
+    {
+      "id": "hestia",
+      "name": "Hestia",
+      "title": "Curadora do Soul",
+      "role": "Protege a identidade, os principios e os pactos do projeto.",
+      "summary": "Traduz o Soul em algo legivel para humanos: o que somos, o que decidimos e o que nunca deve se perder.",
+      "systems": ["soul.md", "docs/zeus-catalog.md"],
+      "keywords": ["identidade", "rituais", "essencia"],
+      "image": "./assets/portraits/hestia-soul-keeper.png",
+      "accent": "hearth"
+    }
+  ],
+  "beginnerJourneys": [
+    {
+      "title": "Nao sei por onde comecar",
+      "owner": "Zeus",
+      "steps": [
+        "Descreva o resultado que voce quer em linguagem comum.",
+        "Zeus escolhe a combinacao de agentes e skills.",
+        "O sistema mostra o proximo passo mais seguro."
+      ]
+    },
+    {
+      "title": "Quero tirar uma ideia do papel",
+      "owner": "Athena",
+      "steps": [
+        "Athena organiza a ideia em fases.",
+        "Zeus decide quem executa cada fase.",
+        "Apollo verifica se a entrega faz sentido."
+      ]
+    },
+    {
+      "title": "Estou perdido no projeto",
+      "owner": "Mnemosyne",
+      "steps": [
+        "Abra o Soul para ver identidade e decisoes.",
+        "Use a memoria para recuperar contexto historico.",
+        "Retome o fluxo sem reexplicar tudo do zero."
+      ]
+    }
+  ]
+}

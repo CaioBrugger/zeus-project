@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zeus Project | Soul</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body data-page="soul">
+    <div class="ambient ambient-a"></div>
+    <div class="ambient ambient-b"></div>
+
+    <div class="shell">
+      <header class="topbar">
+        <a class="brand" href="./index.html">
+          <span class="brand-mark">⚡</span>
+          <span>
+            <strong>Zeus Project</strong>
+            <small>Olympus Command</small>
+          </span>
+        </a>
+        <nav class="nav-links">
+          <a href="./index.html">Dashboard</a>
+          <a href="./soul.html" class="is-active">Soul</a>
+          <a href="../aura-system/index.html">Aura System</a>
+          <a href="../../soul.md">Soul.md</a>
+        </nav>
+      </header>
+
+      <section class="soul-hero">
+        <article class="panel">
+          <p class="eyebrow">Soul interface</p>
+          <h1 class="soul-quote" id="soulIntro"></h1>
+        </article>
+
+        <article class="panel">
+          <p class="eyebrow">Identidade</p>
+          <h2 id="soulHeadline"></h2>
+          <p class="lead" id="soulBody"></p>
+        </article>
+      </section>
+
+      <section class="soul-grid">
+        <article class="panel">
+          <p class="eyebrow">Principios</p>
+          <h2>O que este projeto defende</h2>
+          <div class="decision-list" id="principlesList"></div>
+        </article>
+
+        <article class="panel">
+          <p class="eyebrow">Pilares</p>
+          <h2>O que sustenta o sistema</h2>
+          <div class="pillar-list" id="pillarList"></div>
+        </article>
+
+        <article class="panel">
+          <p class="eyebrow">Decisoes</p>
+          <h2>Regras que nao devem sumir</h2>
+          <div class="decision-list" id="decisionsList"></div>
+        </article>
+
+        <article class="panel">
+          <p class="eyebrow">Linha do tempo</p>
+          <h2>Como a alma foi formada</h2>
+          <div class="timeline-list" id="timelineList"></div>
+        </article>
+      </section>
+    </div>
+
+    <script src="./app.js" type="module"></script>
+  </body>
+</html>

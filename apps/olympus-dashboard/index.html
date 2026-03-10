@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zeus Project | Olympus Command</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body data-page="dashboard">
+    <div class="ambient ambient-a"></div>
+    <div class="ambient ambient-b"></div>
+
+    <div class="shell">
+      <header class="topbar">
+        <a class="brand" href="./index.html">
+          <span class="brand-mark">⚡</span>
+          <span>
+            <strong>Zeus Project</strong>
+            <small>Olympus Command</small>
+          </span>
+        </a>
+        <nav class="nav-links">
+          <a href="./index.html" class="is-active">Dashboard</a>
+          <a href="./soul.html">Soul</a>
+          <a href="../aura-system/index.html">Aura System</a>
+          <a href="../../docs/zeus-catalog.md">Catalogo</a>
+        </nav>
+      </header>
+
+      <section class="hero-v2">
+        <div class="hero-panel hero-copy">
+          <p class="eyebrow">Sistema para humanos</p>
+          <h1>Entenda o ecossistema sem decorar nomes tecnicos.</h1>
+          <p class="lead">
+            O Zeus Project transforma um universo complexo de skills, agentes,
+            squads e integracoes em um sistema navegavel. Diga o resultado que
+            voce quer e o Olimpo escolhe o melhor caminho.
+          </p>
+          <div class="hero-cta-row">
+            <a class="button primary" href="./soul.html">Entrar no Soul</a>
+            <a class="button secondary" href="#journeys">Ver jornadas</a>
+          </div>
+          <div class="hero-kpis" id="heroKpis"></div>
+        </div>
+
+        <div class="hero-panel hero-visual">
+          <div class="hero-art-frame">
+            <img src="./assets/generated/zeus-hero.png" alt="Zeus guiando a operacao do projeto" />
+          </div>
+          <div class="floating-note">
+            <span class="eyebrow">Entrada unica</span>
+            <strong>@zeus</strong>
+            <p>Voce pede o resultado. O sistema cuida do roteamento.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-grid">
+        <article class="panel guide-panel" id="journeys">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Primeiros passos</p>
+              <h2>Escolha sua jornada</h2>
+            </div>
+            <p class="muted">Fluxos feitos para quem ainda nao conhece a arquitetura.</p>
+          </div>
+          <div class="journey-tabs" id="journeyTabs"></div>
+          <div class="journey-stage" id="journeyStage"></div>
+        </article>
+
+        <article class="panel beginner-panel">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Traducao humana</p>
+              <h2>Como o sistema pensa</h2>
+            </div>
+          </div>
+          <div class="thinking-stack">
+            <div class="thinking-step">
+              <strong>1. Pedido humano</strong>
+              <p>Voce descreve o que quer em portugues comum.</p>
+            </div>
+            <div class="thinking-step">
+              <strong>2. Zeus interpreta</strong>
+              <p>O orquestrador descobre se o caso pede memoria, planejamento, UI, automacao ou execucao.</p>
+            </div>
+            <div class="thinking-step">
+              <strong>3. Especialistas entram</strong>
+              <p>O menor conjunto capaz de skills, agents e squads assume o trabalho.</p>
+            </div>
+            <div class="thinking-step">
+              <strong>4. Soul registra</strong>
+              <p>Decisoes importantes podem ser preservadas para o futuro do projeto.</p>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="panel dashboard-panel">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Painel vivo</p>
+            <h2>Radar do ecossistema</h2>
+          </div>
+          <p class="muted" id="datasetStamp"></p>
+        </div>
+
+        <div class="radar-grid">
+          <div class="radar-card">
+            <span class="metric-label">Skills por universo</span>
+            <div id="repoSkillBreakdown" class="bar-list"></div>
+          </div>
+          <div class="radar-card">
+            <span class="metric-label">Top reinos de capacidade</span>
+            <div id="capabilityHighlights" class="highlight-list"></div>
+          </div>
+          <div class="radar-card">
+            <span class="metric-label">Painel de orientacao</span>
+            <div class="mini-cards" id="orientationCards"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel personas-panel">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Conselho do Olimpo</p>
+            <h2>Personagens que explicam o sistema</h2>
+          </div>
+          <p class="muted">Cada personagem representa uma familia de capacidades reais do projeto.</p>
+        </div>
+        <div class="persona-filter-row">
+          <label class="field compact">
+            <span>Buscar personagem ou sistema</span>
+            <input id="personaSearchInput" type="search" placeholder="Zeus, memoria, roadmap, UI..." />
+          </label>
+        </div>
+        <div class="persona-grid" id="personaGrid"></div>
+      </section>
+
+      <section class="explorer-layout">
+        <article class="panel explorer-panel">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Explorador</p>
+              <h2>Busque skills, agents, squads e repos</h2>
+            </div>
+            <p class="muted" id="resultsCount"></p>
+          </div>
+
+          <div class="filters">
+            <label class="field">
+              <span>Buscar</span>
+              <input id="searchInput" type="search" placeholder="roadmap, mcp, frontend, memory..." />
+            </label>
+            <label class="field">
+              <span>Tipo</span>
+              <select id="typeFilter">
+                <option value="all">Todos</option>
+                <option value="skill">Skills</option>
+                <option value="agent">Agents</option>
+                <option value="squad">Squads</option>
+                <option value="repository">Repositorios</option>
+              </select>
+            </label>
+            <label class="field">
+              <span>Repositorio</span>
+              <select id="repoFilter">
+                <option value="all">Todos</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="cards-grid" id="cardsGrid"></div>
+        </article>
+
+        <aside class="panel explainer-panel">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Mapa de fontes</p>
+              <h2>De onde vem tudo</h2>
+            </div>
+          </div>
+          <div class="repo-list" id="repoList"></div>
+        </aside>
+      </section>
+    </div>
+
+    <template id="heroKpiTemplate">
+      <article class="hero-kpi">
+        <span class="hero-kpi-label"></span>
+        <strong class="hero-kpi-value"></strong>
+      </article>
+    </template>
+
+    <template id="journeyTabTemplate">
+      <button class="journey-tab" type="button"></button>
+    </template>
+
+    <template id="personaCardTemplate">
+      <article class="persona-card">
+        <div class="persona-portrait">
+          <img alt="" />
+        </div>
+        <div class="persona-body">
+          <p class="persona-overline"></p>
+          <h3></h3>
+          <p class="persona-summary"></p>
+          <div class="persona-system-list"></div>
+        </div>
+      </article>
+    </template>
+
+    <template id="cardTemplate">
+      <article class="asset-card">
+        <div class="asset-meta">
+          <span class="badge"></span>
+          <span class="repo-tag"></span>
+        </div>
+        <h3></h3>
+        <p class="asset-description"></p>
+        <code class="asset-path"></code>
+      </article>
+    </template>
+
+    <script src="./app.js" type="module"></script>
+  </body>
+</html>

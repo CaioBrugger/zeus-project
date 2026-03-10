@@ -1,0 +1,76 @@
+:root {
+  --aura-font-sans: "Inter", "Manrope", system-ui, sans-serif;
+  --aura-font-display: "Inter", "Geist", system-ui, sans-serif;
+  --aura-font-serif: "Newsreader", "Playfair Display", serif;
+  --aura-font-mono: "IBM Plex Mono", "Geist Mono", monospace;
+
+  --aura-color-bg: hsl(0 0% 100%);
+  --aura-color-fg: hsl(0 0% 9%);
+  --aura-color-surface: hsl(0 0% 98%);
+  --aura-color-surface-strong: hsl(0 0% 96%);
+  --aura-color-border: hsl(0 0% 90%);
+  --aura-color-border-strong: hsl(0 0% 84%);
+  --aura-color-muted: hsl(0 0% 45%);
+  --aura-color-primary: #2563eb;
+  --aura-color-primary-strong: #1d4ed8;
+  --aura-color-primary-soft: #3b82f6;
+  --aura-color-primary-foreground: #ffffff;
+  --aura-color-card: #ffffff;
+  --aura-color-success: #16a34a;
+  --aura-color-warning: #f59e0b;
+  --aura-color-danger: hsl(0 84% 60%);
+  --aura-color-selection: rgba(59, 130, 246, 0.2);
+
+  --aura-gradient-primary: linear-gradient(180deg, #3b82f6 0%, #2563eb 100%);
+  --aura-gradient-border: conic-gradient(
+    from 0deg,
+    transparent 0%,
+    #2563eb 5%,
+    #3b82f6 15%,
+    #2563eb 30%,
+    transparent 40%,
+    transparent 100%
+  );
+  --aura-gradient-page: radial-gradient(circle at top, rgba(59, 130, 246, 0.08), transparent 35%),
+    linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
+
+  --aura-space-1: 0.25rem;
+  --aura-space-2: 0.5rem;
+  --aura-space-3: 0.75rem;
+  --aura-space-4: 1rem;
+  --aura-space-5: 1.25rem;
+  --aura-space-6: 1.5rem;
+  --aura-space-8: 2rem;
+  --aura-space-10: 2.5rem;
+  --aura-space-12: 3rem;
+  --aura-space-16: 4rem;
+  --aura-space-20: 5rem;
+  --aura-space-24: 6rem;
+
+  --aura-radius-sm: 0.5rem;
+  --aura-radius-md: 0.75rem;
+  --aura-radius-lg: 1rem;
+  --aura-radius-xl: 1.5rem;
+  --aura-radius-pill: 9999px;
+
+  --aura-shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.06);
+  --aura-shadow-sm: rgba(14, 63, 126, 0.04) 0px 0px 0px 1px,
+    rgba(42, 51, 69, 0.04) 0px 1px 1px -0.5px,
+    rgba(42, 51, 70, 0.04) 0px 3px 3px -1.5px;
+  --aura-shadow-md: rgba(14, 63, 126, 0.04) 0px 0px 0px 1px,
+    rgba(42, 51, 69, 0.04) 0px 1px 1px -0.5px,
+    rgba(42, 51, 70, 0.04) 0px 6px 6px -3px,
+    rgba(14, 63, 126, 0.04) 0px 12px 12px -6px;
+  --aura-shadow-lg: rgba(14, 63, 126, 0.04) 0px 0px 0px 1px,
+    rgba(42, 51, 69, 0.04) 0px 1px 1px -0.5px,
+    rgba(42, 51, 70, 0.04) 0px 12px 12px -6px,
+    rgba(14, 63, 126, 0.04) 0px 24px 24px -12px;
+
+  --aura-duration-fast: 180ms;
+  --aura-duration-base: 300ms;
+  --aura-duration-slow: 800ms;
+  --aura-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --aura-ease-inout: cubic-bezier(0.25, 1, 0.5, 1);
+
+  --aura-container: 1400px;
+}

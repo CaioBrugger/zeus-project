@@ -1,0 +1,56 @@
+{
+  "title": "Soul of Zeus Project",
+  "intro": "A alma do projeto guarda sua identidade, suas decisoes e tudo aquilo que nao pode evaporar entre sessoes, ferramentas e pessoas.",
+  "identity": {
+    "headline": "Um centro de comando para ecossistemas de IA orientados por agentes.",
+    "body": "Zeus Project agrega repositórios upstream, cria governanca local e oferece uma entrada unica para humanos: chamar Zeus e descrever o resultado desejado."
+  },
+  "principles": [
+    "Outcome first, taxonomy second.",
+    "Um ponto de entrada para humanos: @zeus.",
+    "Conhecimento importante precisa sobreviver ao contexto de sessao.",
+    "Repos importados ficam preservados; a governanca local vive neste projeto."
+  ],
+  "pillars": [
+    {
+      "name": "Memoria",
+      "detail": "Claude Mem e Soul mantem contexto, identidade e decisoes."
+    },
+    {
+      "name": "Entrega",
+      "detail": "GSD, Superpowers e Claude Mem operam planejamento, execucao e verificacao."
+    },
+    {
+      "name": "Orquestracao",
+      "detail": "Zeus decide o menor stack capaz para cada pedido."
+    },
+    {
+      "name": "Navegacao",
+      "detail": "A dashboard Olympus traduz o ecossistema para pessoas nao tecnicas."
+    }
+  ],
+  "decisions": [
+    "sources/ e a zona de espelho dos repos importados.",
+    "Comportamento local vive em .claude/, docs/, scripts/ e arquivos de governanca.",
+    "O usuario nao deve precisar decorar nomes internos de especialistas.",
+    "Mudancas estruturais relevantes devem atualizar o Soul."
+  ],
+  "timeline": [
+    {
+      "date": "2026-03-10",
+      "event": "Fundacao do Zeus Project como super repositorio."
+    },
+    {
+      "date": "2026-03-10",
+      "event": "Importacao de 10 repositorios upstream."
+    },
+    {
+      "date": "2026-03-10",
+      "event": "Criacao do orquestrador Zeus, catalogo unificado e dashboard Olympus."
+    },
+    {
+      "date": "2026-03-10",
+      "event": "Geracao da identidade visual mitologica com retratos e cenas."
+    }
+  ]
+}

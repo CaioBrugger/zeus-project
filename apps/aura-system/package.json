@@ -1,0 +1,13 @@
+{
+  "name": "@zeus/aura-system",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Internal design-system package extracted and adapted from the Aura AI Developer site.",
+  "exports": {
+    "./tokens.json": "./tokens.json",
+    "./tailwind.tokens": "./tailwind.tokens.js",
+    "./styles/template.css": "./styles/template.css",
+    "./styles/tokens.css": "./styles/tokens.css",
+    "./react": "./react/app.page.tsx"
+  }
+}

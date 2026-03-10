@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zeus Project</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @import url("./apps/aura-system/styles/template.css");
+
+      :root {
+        --zeus-bg: linear-gradient(180deg, #ffffff 0%, #f6faff 50%, #ecf3ff 100%);
+      }
+
+      body {
+        background: var(--zeus-bg);
+      }
+
+      .zeus-home {
+        padding: 3rem 0 5rem;
+      }
+
+      .zeus-hero {
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: 2rem;
+        align-items: center;
+        margin-bottom: 2rem;
+      }
+
+      .zeus-panel {
+        padding: 2rem;
+      }
+
+      .zeus-art {
+        aspect-ratio: 16 / 11;
+        border-radius: 1.75rem;
+        overflow: hidden;
+        border: 1px solid rgba(37, 99, 235, 0.12);
+        box-shadow: var(--aura-shadow-lg);
+      }
+
+      .zeus-art img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .zeus-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1.25rem;
+        margin-bottom: 2rem;
+      }
+
+      .zeus-card {
+        padding: 1.5rem;
+      }
+
+      .zeus-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        margin-top: 1.5rem;
+      }
+
+      .zeus-roadmap {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.25rem;
+      }
+
+      @media (max-width: 980px) {
+        .zeus-hero,
+        .zeus-grid,
+        .zeus-roadmap {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="aura-nav">
+      <div class="aura-container aura-nav__inner">
+        <a class="aura-nav__brand" href="./index.html">
+          <span class="aura-nav__mark">⚡</span>
+          <span>Zeus Project</span>
+        </a>
+        <nav class="aura-nav__links">
+          <a href="./index.html">Home</a>
+          <a href="./apps/olympus-dashboard/">Olympus</a>
+          <a href="./apps/olympus-dashboard/soul.html">Soul</a>
+          <a href="./apps/aura-system/">Aura System</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="zeus-home">
+      <section class="aura-container zeus-hero">
+        <div class="aura-card zeus-panel">
+          <p class="aura-eyebrow">Entrada principal</p>
+          <h1 class="aura-title-xl">Um centro de comando para navegar todo o Zeus Project.</h1>
+          <p class="aura-copy-lg">
+            Esta home une a orquestração do Olympus, a memória do Soul e o kit
+            visual do Aura System em uma única entrada para o projeto.
+          </p>
+          <div class="zeus-links">
+            <a class="aura-button aura-button-primary" href="./apps/olympus-dashboard/">Abrir Olympus</a>
+            <a class="aura-button aura-button-secondary" href="./apps/olympus-dashboard/soul.html">Abrir Soul</a>
+            <a class="aura-shiny-cta" href="./apps/aura-system/">Explorar Aura System</a>
+          </div>
+        </div>
+
+        <div class="zeus-art">
+          <img src="./apps/olympus-dashboard/assets/generated/zeus-hero.png" alt="Zeus Project" />
+        </div>
+      </section>
+
+      <section class="aura-container zeus-grid">
+        <article class="aura-card zeus-card">
+          <p class="aura-eyebrow">Olympus</p>
+          <h2 class="aura-title-md">Dashboard para pessoas</h2>
+          <p class="aura-copy">A interface guiada para entender skills, agents, squads, jornadas e personagens do sistema.</p>
+        </article>
+        <article class="aura-card zeus-card">
+          <p class="aura-eyebrow">Soul</p>
+          <h2 class="aura-title-md">Memória viva do projeto</h2>
+          <p class="aura-copy">A camada que registra identidade, decisões, pilares e história do Zeus Project.</p>
+        </article>
+        <article class="aura-card zeus-card">
+          <p class="aura-eyebrow">Aura System</p>
+          <h2 class="aura-title-md">Base visual reutilizável</h2>
+          <p class="aura-copy">Tokens, atomic design, snippets HTML, React starter e guidelines para novas páginas.</p>
+        </article>
+      </section>
+
+      <section class="aura-container zeus-roadmap">
+        <article class="aura-card zeus-card">
+          <p class="aura-eyebrow">Starter oficial</p>
+          <h2 class="aura-title-md">Para novas páginas HTML</h2>
+          <p class="aura-copy">Use o starter em `apps/aura-system/templates/page-starter.html` e herde a base do sistema automaticamente.</p>
+        </article>
+        <article class="aura-card zeus-card">
+          <p class="aura-eyebrow">Starter React</p>
+          <h2 class="aura-title-md">Para novas páginas Next/React</h2>
+          <p class="aura-copy">Use `apps/aura-system/react/templates/PageStarter.tsx` como ponto de partida para novas superfícies.</p>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>

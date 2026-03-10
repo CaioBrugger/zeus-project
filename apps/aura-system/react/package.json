@@ -1,0 +1,11 @@
+{
+  "name": "aura-system-react",
+  "private": true,
+  "version": "1.0.0",
+  "description": "React/Next-ready version of the extracted Aura design system.",
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18",
+    "next": ">=14"
+  }
+}

@@ -1,0 +1,155 @@
+.aura-hero,
+.aura-section,
+.aura-footer {
+  padding: var(--aura-space-20) 0;
+}
+
+.aura-hero {
+  padding-top: var(--aura-space-16);
+}
+
+.aura-hero__grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: var(--aura-space-8);
+  align-items: center;
+}
+
+.aura-hero__copy {
+  display: grid;
+  gap: var(--aura-space-5);
+}
+
+.aura-hero__actions {
+  gap: var(--aura-space-3);
+  flex-wrap: wrap;
+}
+
+.aura-hero__visual {
+  padding: var(--aura-space-4);
+}
+
+.aura-hero__mock {
+  aspect-ratio: 16 / 11;
+  overflow: hidden;
+  border-radius: 1.75rem;
+  border: 1px solid rgba(37, 99, 235, 0.12);
+  background:
+    radial-gradient(circle at top right, rgba(59, 130, 246, 0.22), transparent 25%),
+    linear-gradient(180deg, #111827 0%, #050816 100%);
+  box-shadow: var(--aura-shadow-lg);
+}
+
+.aura-hero__mock::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(circle at 20% 15%, rgba(255, 255, 255, 0.12), transparent 12%),
+    linear-gradient(transparent 95%, rgba(255, 255, 255, 0.04) 95%),
+    linear-gradient(90deg, transparent 95%, rgba(255, 255, 255, 0.04) 95%);
+  background-size: auto, 100% 48px, 48px 100%;
+}
+
+.aura-metrics-grid,
+.aura-feature-grid,
+.aura-pricing-grid,
+.aura-testimonial-grid,
+.aura-token-grid {
+  display: grid;
+  gap: var(--aura-space-5);
+}
+
+.aura-metrics-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.aura-feature-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.aura-workflow {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--aura-space-4);
+}
+
+.aura-pricing-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.aura-testimonial-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.aura-token-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.aura-section__head {
+  justify-content: space-between;
+  gap: var(--aura-space-6);
+  margin-bottom: var(--aura-space-8);
+}
+
+.aura-section__copy {
+  max-width: 34rem;
+}
+
+.aura-guideline-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--aura-space-5);
+}
+
+.aura-guideline-card {
+  padding: var(--aura-space-6);
+}
+
+.aura-footer {
+  padding-top: var(--aura-space-12);
+  border-top: 1px solid rgba(229, 229, 229, 0.7);
+}
+
+.aura-footer__inner {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--aura-space-4);
+  flex-wrap: wrap;
+}
+
+@media (max-width: 1080px) {
+  .aura-hero__grid,
+  .aura-workflow,
+  .aura-feature-grid,
+  .aura-pricing-grid,
+  .aura-testimonial-grid,
+  .aura-guideline-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .aura-token-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .aura-metrics-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .aura-container {
+    width: min(100% - 20px, var(--aura-container));
+  }
+
+  .aura-hero,
+  .aura-section,
+  .aura-footer {
+    padding: var(--aura-space-12) 0;
+  }
+
+  .aura-token-grid {
+    grid-template-columns: 1fr;
+  }
+}
