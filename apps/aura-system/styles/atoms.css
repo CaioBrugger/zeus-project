@@ -12,6 +12,9 @@ body {
   color: var(--aura-color-fg);
   background: var(--aura-gradient-page);
   letter-spacing: -0.01em;
+  transition:
+    background var(--aura-duration-base) var(--aura-ease-out),
+    color var(--aura-duration-base) var(--aura-ease-out);
 }
 
 ::selection {
@@ -26,6 +29,17 @@ img {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+code {
+  font-family: var(--aura-font-mono);
 }
 
 .aura-container {
@@ -54,12 +68,12 @@ a {
 }
 
 .aura-title-xl {
-  font-size: clamp(3rem, 7vw, 5.8rem);
+  font-size: clamp(3rem, 7vw, 5.4rem);
   line-height: 0.96;
 }
 
 .aura-title-lg {
-  font-size: clamp(2rem, 4vw, 3.6rem);
+  font-size: clamp(2rem, 4vw, 3.4rem);
   line-height: 1;
 }
 
@@ -101,7 +115,7 @@ a {
   min-height: 2rem;
   padding: 0 var(--aura-space-3);
   border-radius: var(--aura-radius-pill);
-  background: rgba(37, 99, 235, 0.08);
+  background: color-mix(in srgb, var(--aura-color-primary) 12%, transparent);
   color: var(--aura-color-primary);
   font-size: 0.75rem;
   font-weight: 600;
@@ -111,33 +125,50 @@ a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: var(--aura-space-2);
   min-height: 3.25rem;
   padding: 0 var(--aura-space-6);
   border-radius: var(--aura-radius-pill);
   border: 1px solid transparent;
+  background: transparent;
   font-weight: 600;
-  transition: transform var(--aura-duration-fast) ease,
+  cursor: pointer;
+  transition:
+    transform var(--aura-duration-fast) ease,
     background var(--aura-duration-base) var(--aura-ease-out),
     border-color var(--aura-duration-base) var(--aura-ease-out),
-    box-shadow var(--aura-duration-base) var(--aura-ease-out);
+    box-shadow var(--aura-duration-base) var(--aura-ease-out),
+    color var(--aura-duration-base) var(--aura-ease-out),
+    opacity var(--aura-duration-base) var(--aura-ease-out);
 }
 
 .aura-button:hover {
   transform: translateY(-1px);
 }
 
+.aura-button:disabled {
+  cursor: not-allowed;
+  transform: none;
+  opacity: 0.45;
+}
+
 .aura-button-primary {
   color: var(--aura-color-primary-foreground);
   background: var(--aura-gradient-primary);
-  border-color: var(--aura-color-primary);
-  box-shadow: var(--aura-shadow-md), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  border-color: color-mix(in srgb, var(--aura-color-primary) 60%, transparent);
+  box-shadow: var(--aura-shadow-md), inset 0 1px 0 rgba(255, 255, 255, 0.18);
 }
 
 .aura-button-secondary {
   color: var(--aura-color-fg);
-  background: rgba(255, 255, 255, 0.72);
+  background: color-mix(in srgb, var(--aura-color-card) 92%, transparent);
   border-color: var(--aura-color-border);
   box-shadow: var(--aura-shadow-sm);
+}
+
+.aura-button-ghost {
+  color: var(--aura-color-muted);
+  border-color: var(--aura-color-border);
 }
 
 .aura-shiny-cta {
@@ -145,16 +176,25 @@ a {
   overflow: hidden;
   border-radius: var(--aura-radius-pill);
   padding: 1.25rem 3rem;
-  color: white;
+  color: var(--aura-color-fg);
   background:
-    linear-gradient(#000, #000) padding-box,
+    linear-gradient(var(--aura-color-card), var(--aura-color-card)) padding-box,
     var(--aura-gradient-border) border-box;
   border: 2px solid transparent;
-  box-shadow: inset 0 0 0 1px #1a1818;
+  box-shadow: var(--aura-shadow-md);
+}
+
+.aura-shiny-cta::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, transparent 20%, rgba(255, 255, 255, 0.45) 50%, transparent 80%);
+  transform: translateX(-120%);
+  animation: aura-shimmer 2.8s linear infinite;
 }
 
 .aura-card {
-  background: rgba(255, 255, 255, 0.88);
+  background: var(--aura-gradient-panel);
   border: 1px solid var(--aura-color-border);
   border-radius: var(--aura-radius-xl);
   box-shadow: var(--aura-shadow-md);
@@ -164,4 +204,139 @@ a {
   width: 100%;
   height: 1px;
   background: var(--aura-color-border);
+}
+
+.aura-code-inline {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.25rem;
+  padding: 0 var(--aura-space-3);
+  border-radius: var(--aura-radius-md);
+  background: color-mix(in srgb, var(--aura-color-surface-strong) 92%, transparent);
+  border: 1px solid var(--aura-color-border);
+  color: var(--aura-color-fg);
+}
+
+.aura-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2rem;
+  padding: 0 var(--aura-space-3);
+  border-radius: var(--aura-radius-pill);
+  font-size: 0.8rem;
+  font-weight: 700;
+  border: 1px solid transparent;
+}
+
+.aura-badge--success {
+  color: var(--aura-color-success);
+  background: color-mix(in srgb, var(--aura-color-success) 12%, transparent);
+}
+
+.aura-badge--warning {
+  color: var(--aura-color-warning);
+  background: color-mix(in srgb, var(--aura-color-warning) 12%, transparent);
+}
+
+.aura-badge--danger {
+  color: var(--aura-color-danger);
+  background: color-mix(in srgb, var(--aura-color-danger) 12%, transparent);
+}
+
+.aura-alert {
+  padding: var(--aura-space-4);
+  border-radius: var(--aura-radius-lg);
+  border: 1px solid var(--aura-color-border);
+  background: color-mix(in srgb, var(--aura-color-card) 86%, transparent);
+}
+
+.aura-alert strong {
+  display: block;
+  margin-bottom: var(--aura-space-2);
+}
+
+.aura-alert--info {
+  border-color: color-mix(in srgb, var(--aura-color-info) 26%, var(--aura-color-border));
+}
+
+.aura-field {
+  display: grid;
+  gap: var(--aura-space-2);
+}
+
+.aura-field span {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.aura-field input,
+.aura-field select,
+.aura-field textarea {
+  width: 100%;
+  padding: 0.95rem 1rem;
+  border-radius: var(--aura-radius-lg);
+  border: 1px solid var(--aura-color-border);
+  background: color-mix(in srgb, var(--aura-color-card) 95%, transparent);
+  color: var(--aura-color-fg);
+  outline: none;
+  transition:
+    border-color var(--aura-duration-base) var(--aura-ease-out),
+    box-shadow var(--aura-duration-base) var(--aura-ease-out),
+    background var(--aura-duration-base) var(--aura-ease-out);
+}
+
+.aura-field input:focus,
+.aura-field select:focus,
+.aura-field textarea:focus {
+  border-color: color-mix(in srgb, var(--aura-color-primary) 45%, transparent);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--aura-color-primary) 14%, transparent);
+}
+
+.aura-skeleton {
+  position: relative;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--aura-color-surface-strong) 92%, transparent);
+  border-radius: var(--aura-radius-md);
+}
+
+.aura-skeleton::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.22), transparent);
+  animation: aura-shimmer 1.5s infinite;
+}
+
+.aura-skeleton--avatar {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+}
+
+.aura-skeleton--line {
+  height: 0.9rem;
+}
+
+.aura-skeleton--w-40 {
+  width: 40%;
+}
+
+.aura-skeleton--w-70 {
+  width: 70%;
+}
+
+.aura-skeleton--w-100 {
+  width: 100%;
+}
+
+@keyframes aura-shimmer {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(100%);
+  }
 }

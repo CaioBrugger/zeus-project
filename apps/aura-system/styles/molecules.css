@@ -3,22 +3,25 @@
   top: 0;
   z-index: 40;
   backdrop-filter: blur(16px);
-  background: rgba(255, 255, 255, 0.74);
-  border-bottom: 1px solid rgba(229, 229, 229, 0.7);
+  background: var(--aura-color-overlay);
+  border-bottom: 1px solid color-mix(in srgb, var(--aura-color-border) 90%, transparent);
 }
 
 .aura-nav__inner,
 .aura-hero__actions,
 .aura-proof,
 .aura-pricing__actions,
-.aura-section__head {
+.aura-section__head,
+.aura-showcase-card__head,
+.aura-footer__actions {
   display: flex;
   align-items: center;
 }
 
 .aura-nav__inner {
   justify-content: space-between;
-  min-height: 4.75rem;
+  gap: var(--aura-space-4);
+  min-height: 5rem;
 }
 
 .aura-nav__brand {
@@ -28,13 +31,23 @@
   font-weight: 700;
 }
 
+.aura-nav__brand strong,
+.aura-nav__brand small {
+  display: block;
+}
+
+.aura-nav__brand small {
+  color: var(--aura-color-muted);
+  font-size: 0.78rem;
+}
+
 .aura-nav__mark {
   display: grid;
   place-items: center;
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50%;
-  color: white;
+  color: var(--aura-color-primary-foreground);
   background: var(--aura-gradient-primary);
   box-shadow: var(--aura-shadow-sm);
 }
@@ -49,11 +62,32 @@
   color: var(--aura-color-muted);
   padding: 0.75rem 1rem;
   border-radius: var(--aura-radius-pill);
+  transition:
+    background var(--aura-duration-base) var(--aura-ease-out),
+    color var(--aura-duration-base) var(--aura-ease-out);
 }
 
-.aura-nav__links a:hover {
-  background: rgba(37, 99, 235, 0.08);
+.aura-nav__links a:hover,
+.aura-nav__links a[aria-current="page"] {
+  background: color-mix(in srgb, var(--aura-color-primary) 12%, transparent);
   color: var(--aura-color-fg);
+}
+
+.aura-theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--aura-space-2);
+  min-height: 2.75rem;
+  padding: 0 var(--aura-space-4);
+  border-radius: var(--aura-radius-pill);
+  border: 1px solid var(--aura-color-border);
+  background: color-mix(in srgb, var(--aura-color-card) 92%, transparent);
+  color: var(--aura-color-fg);
+  cursor: pointer;
+}
+
+.aura-theme-toggle__icon {
+  font-size: 1rem;
 }
 
 .aura-proof {
@@ -66,7 +100,7 @@
   height: 2.75rem;
   border-radius: 50%;
   background: linear-gradient(135deg, #0f172a, #2563eb);
-  border: 2px solid white;
+  border: 2px solid rgba(255, 255, 255, 0.8);
 }
 
 .aura-metric {
@@ -90,7 +124,7 @@
   display: grid;
   place-items: center;
   margin-bottom: var(--aura-space-4);
-  background: rgba(37, 99, 235, 0.08);
+  background: color-mix(in srgb, var(--aura-color-primary) 12%, transparent);
   color: var(--aura-color-primary);
   font-weight: 700;
 }
@@ -109,7 +143,7 @@
   border-radius: 50%;
   display: grid;
   place-items: center;
-  background: rgba(37, 99, 235, 0.08);
+  background: color-mix(in srgb, var(--aura-color-primary) 12%, transparent);
   color: var(--aura-color-primary);
   font-weight: 700;
 }
@@ -121,8 +155,8 @@
 }
 
 .aura-price-card--featured {
-  border-color: rgba(37, 99, 235, 0.35);
-  background: linear-gradient(180deg, rgba(59, 130, 246, 0.08), rgba(255, 255, 255, 0.92));
+  border-color: color-mix(in srgb, var(--aura-color-primary) 30%, var(--aura-color-border));
+  background: linear-gradient(180deg, color-mix(in srgb, var(--aura-color-primary) 10%, transparent), var(--aura-color-card));
 }
 
 .aura-price {
@@ -134,6 +168,9 @@
 .aura-checklist {
   display: grid;
   gap: var(--aura-space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .aura-checklist li {
@@ -177,5 +214,223 @@
   width: 100%;
   height: 5rem;
   border-radius: var(--aura-radius-lg);
-  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.aura-token__swatch--bordered {
+  border: 1px solid color-mix(in srgb, var(--aura-color-border-strong) 90%, transparent);
+}
+
+.aura-token__swatch--dark {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.aura-showcase-card {
+  padding: var(--aura-space-6);
+  display: grid;
+  gap: var(--aura-space-5);
+}
+
+.aura-showcase-card__head {
+  justify-content: space-between;
+  gap: var(--aura-space-4);
+}
+
+.aura-type-scale,
+.aura-spacing-scale,
+.aura-depth-stack,
+.aura-button-row,
+.aura-status-stack,
+.aura-status-badges,
+.aura-motion-card,
+.aura-skeleton-stack {
+  display: grid;
+  gap: var(--aura-space-4);
+}
+
+.aura-type-scale__sample,
+.aura-type-scale__body {
+  margin-top: var(--aura-space-2);
+}
+
+.aura-spacing-scale div {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: var(--aura-space-4);
+  align-items: center;
+}
+
+.aura-spacing-scale i {
+  display: block;
+  height: 1rem;
+  border-radius: var(--aura-radius-pill);
+  background: var(--aura-gradient-primary);
+}
+
+.aura-depth-stack {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.aura-depth-sample {
+  min-height: 7rem;
+  display: grid;
+  place-items: center;
+  border-radius: var(--aura-radius-xl);
+  background: color-mix(in srgb, var(--aura-color-card) 95%, transparent);
+  border: 1px solid var(--aura-color-border);
+}
+
+.aura-depth-sample--sm {
+  box-shadow: var(--aura-shadow-sm);
+}
+
+.aura-depth-sample--md {
+  box-shadow: var(--aura-shadow-md);
+}
+
+.aura-depth-sample--lg {
+  box-shadow: var(--aura-shadow-lg);
+}
+
+.aura-button-row {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.aura-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--aura-space-4);
+}
+
+.aura-field--full {
+  grid-column: 1 / -1;
+}
+
+.aura-status-badges {
+  grid-template-columns: repeat(3, max-content);
+}
+
+.aura-skeleton-card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--aura-space-4);
+  align-items: center;
+}
+
+.aura-template-card {
+  overflow: hidden;
+}
+
+.aura-template-card__preview {
+  padding: var(--aura-space-4);
+  border-bottom: 1px solid var(--aura-color-border);
+}
+
+.aura-template-card__body {
+  padding: var(--aura-space-5);
+}
+
+.aura-mini-layout {
+  min-height: 11rem;
+  border-radius: var(--aura-radius-lg);
+  background: linear-gradient(180deg, color-mix(in srgb, var(--aura-color-primary) 10%, transparent), transparent),
+    color-mix(in srgb, var(--aura-color-surface-strong) 92%, transparent);
+  border: 1px solid var(--aura-color-border);
+  position: relative;
+  overflow: hidden;
+}
+
+.aura-mini-layout::before,
+.aura-mini-layout::after {
+  content: "";
+  position: absolute;
+  border-radius: var(--aura-radius-md);
+  background: color-mix(in srgb, var(--aura-color-primary) 18%, transparent);
+}
+
+.aura-mini-layout--dashboard::before {
+  inset: 16px auto 16px 16px;
+  width: 20%;
+}
+
+.aura-mini-layout--dashboard::after {
+  inset: 16px 16px 16px 27%;
+}
+
+.aura-mini-layout--wizard::before {
+  inset: 16px 16px auto 16px;
+  height: 18%;
+}
+
+.aura-mini-layout--wizard::after {
+  inset: 36% 16px 16px 16px;
+}
+
+.aura-motion-card {
+  padding: var(--aura-space-5);
+}
+
+.aura-motion-demo {
+  min-height: 8rem;
+  border-radius: var(--aura-radius-xl);
+  background: color-mix(in srgb, var(--aura-color-surface-strong) 92%, transparent);
+  border: 1px solid var(--aura-color-border);
+}
+
+.aura-motion-demo--lift {
+  animation: aura-float 2.8s ease-in-out infinite;
+}
+
+.aura-motion-demo--pulse {
+  background:
+    linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent),
+    color-mix(in srgb, var(--aura-color-surface-strong) 92%, transparent);
+  background-size: 200% 100%, auto;
+  animation: aura-pulse-slide 2s linear infinite;
+}
+
+.aura-motion-demo--spotlight {
+  position: relative;
+  overflow: hidden;
+}
+
+.aura-motion-demo--spotlight::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--aura-gradient-spotlight);
+  animation: aura-spotlight 3.2s ease-in-out infinite;
+}
+
+@keyframes aura-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes aura-pulse-slide {
+  from {
+    background-position: 200% 0, 0 0;
+  }
+
+  to {
+    background-position: -40% 0, 0 0;
+  }
+}
+
+@keyframes aura-spotlight {
+  0%,
+  100% {
+    transform: translateX(-8%) scale(1);
+    opacity: 0.6;
+  }
+
+  50% {
+    transform: translateX(8%) scale(1.06);
+    opacity: 1;
+  }
 }

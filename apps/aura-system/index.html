@@ -1,238 +1,106 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aura System Template</title>
+    <title>Zeus Project | Aura System</title>
     <link rel="stylesheet" href="./styles/template.css" />
   </head>
   <body>
     <header class="aura-nav">
       <div class="aura-container aura-nav__inner">
-        <a class="aura-nav__brand" href="#top">
-          <span class="aura-nav__mark">A</span>
-          <span>AuraFlow AI</span>
+        <a class="aura-nav__brand" href="../../index.html">
+          <span class="aura-nav__mark">⚡</span>
+          <span>
+            <strong>Zeus Project</strong>
+            <small>Aura System</small>
+          </span>
         </a>
         <nav class="aura-nav__links">
-          <a href="#features">Features</a>
-          <a href="#workflow">Workflow</a>
-          <a href="#pricing">Pricing</a>
-          <a href="#tokens">Tokens</a>
+          <a href="../../index.html">Home</a>
+          <a href="../olympus-dashboard/index.html">Olympus</a>
+          <a href="../olympus-dashboard/soul.html">Soul</a>
+          <a href="./index.html" aria-current="page">Aura System</a>
+          <a href="./docs/design-system.md">Guidelines</a>
         </nav>
+        <button class="aura-theme-toggle" id="themeToggle" type="button" aria-label="Alternar tema">
+          <span class="aura-theme-toggle__icon">◐</span>
+          <span id="themeToggleLabel">Dark mode</span>
+        </button>
       </div>
     </header>
 
     <main id="top">
-      <section class="aura-hero">
+      <section class="aura-hero aura-hero--system">
         <div class="aura-container aura-hero__grid">
           <div class="aura-hero__copy">
-            <span class="aura-tag">AI design to code</span>
-            <h1 class="aura-title-xl">Build polished product surfaces at startup speed.</h1>
+            <span class="aura-tag">Design System do Zeus</span>
+            <h1 class="aura-title-xl">O Aura agora vive dentro do Zeus Project, com tema dark e guidelines completas.</h1>
             <p class="aura-copy-lg">
-              Template page extracted from the Aura AI Developer design system,
-              rebuilt with atomic design, reusable tokens, and implementation-ready
-              UI guidelines.
+              Esta pagina virou o centro oficial do nosso design system. Ela nao e mais uma
+              landing isolada: continua dentro do projeto, preserva a navbar do Zeus e serve
+              como referencia para componentes, tokens, motion, skeletons, estados e templates.
             </p>
             <div class="aura-hero__actions">
-              <a class="aura-button aura-button-primary" href="#pricing">Start free trial</a>
-              <a class="aura-button aura-button-secondary" href="#tokens">Explore system</a>
-              <a class="aura-shiny-cta" href="#workflow">See workflow</a>
+              <a class="aura-button aura-button-primary" href="#system-overview">Explorar sistema</a>
+              <a class="aura-button aura-button-secondary" href="#guidelines">Ver guidelines</a>
+              <a class="aura-shiny-cta" href="./docs/design-system.md">Abrir documentacao</a>
             </div>
             <div class="aura-proof">
               <div class="aura-proof__avatar"></div>
               <div class="aura-proof__avatar"></div>
               <div class="aura-proof__avatar"></div>
-              <p class="aura-copy-sm">Trusted by product teams shipping AI tools, internal platforms, and premium SaaS launches.</p>
+              <p class="aura-copy-sm">Base visual compartilhada por Home, Olympus, Soul e futuras interfaces do Zeus.</p>
             </div>
           </div>
           <div class="aura-card aura-hero__visual">
-            <div class="aura-hero__mock"></div>
-          </div>
-        </div>
-      </section>
-
-      <section class="aura-section">
-        <div class="aura-container aura-metrics-grid">
-          <div class="aura-card aura-metric">
-            <span class="aura-copy-sm">Deployment speed</span>
-            <strong>4.2x</strong>
-            <p class="aura-copy">Faster than rebuilding pages from scratch.</p>
-          </div>
-          <div class="aura-card aura-metric">
-            <span class="aura-copy-sm">Design consistency</span>
-            <strong>92%</strong>
-            <p class="aura-copy">Higher visual alignment across shipped surfaces.</p>
-          </div>
-          <div class="aura-card aura-metric">
-            <span class="aura-copy-sm">Component reuse</span>
-            <strong>58</strong>
-            <p class="aura-copy">Reusable patterns mapped into the atomic system.</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="aura-section" id="features">
-        <div class="aura-container">
-          <div class="aura-section__head">
-            <div class="aura-section__copy">
-              <p class="aura-eyebrow">Organisms</p>
-              <h2 class="aura-title-lg">Feature section extracted into reusable building blocks.</h2>
-            </div>
-            <p class="aura-copy">Three-column clarity, soft cards, quiet borders, and blue action moments define the source style.</p>
-          </div>
-          <div class="aura-feature-grid">
-            <article class="aura-card aura-feature">
-              <div class="aura-feature__icon">01</div>
-              <h3 class="aura-title-sm">Premium CTA emphasis</h3>
-              <p class="aura-copy">Buttons are simple by default and dramatic only when the action matters.</p>
-            </article>
-            <article class="aura-card aura-feature">
-              <div class="aura-feature__icon">02</div>
-              <h3 class="aura-title-sm">Editorial whitespace</h3>
-              <p class="aura-copy">Large spacing keeps complex AI value propositions easy to scan.</p>
-            </article>
-            <article class="aura-card aura-feature">
-              <div class="aura-feature__icon">03</div>
-              <h3 class="aura-title-sm">Neutral-first surfaces</h3>
-              <p class="aura-copy">The system earns trust with restrained neutral cards and one dominant action color.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="aura-section" id="workflow">
-        <div class="aura-container">
-          <div class="aura-section__head">
-            <div class="aura-section__copy">
-              <p class="aura-eyebrow">Workflow</p>
-              <h2 class="aura-title-lg">Molecule pattern for process explanation.</h2>
-            </div>
-          </div>
-          <div class="aura-workflow">
-            <div class="aura-card aura-workflow-step">
-              <div class="aura-workflow-step__index">1</div>
-              <div>
-                <h3 class="aura-title-sm">Import context</h3>
-                <p class="aura-copy">Collect inputs, screenshots, design goals, and implementation constraints.</p>
-              </div>
-            </div>
-            <div class="aura-card aura-workflow-step">
-              <div class="aura-workflow-step__index">2</div>
-              <div>
-                <h3 class="aura-title-sm">Generate interface</h3>
-                <p class="aura-copy">Use extracted tokens and patterns to build coherent product surfaces fast.</p>
-              </div>
-            </div>
-            <div class="aura-card aura-workflow-step">
-              <div class="aura-workflow-step__index">3</div>
-              <div>
-                <h3 class="aura-title-sm">Ship with confidence</h3>
-                <p class="aura-copy">Work from a reusable template instead of one-off landing page decisions.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="aura-section" id="pricing">
-        <div class="aura-container">
-          <div class="aura-section__head">
-            <div class="aura-section__copy">
-              <p class="aura-eyebrow">Pricing cards</p>
-              <h2 class="aura-title-lg">Atomic pricing organism based on the source landing page style.</h2>
-            </div>
-          </div>
-          <div class="aura-pricing-grid">
-            <article class="aura-card aura-price-card">
-              <div>
-                <span class="aura-tag">Starter</span>
-                <h3 class="aura-title-sm">For small teams</h3>
-              </div>
-              <div class="aura-price">$29</div>
-              <ul class="aura-checklist">
-                <li>Landing page generation</li>
-                <li>Base design system export</li>
-                <li>Email support</li>
-              </ul>
-              <div class="aura-pricing__actions">
-                <a class="aura-button aura-button-secondary" href="#top">Choose starter</a>
-              </div>
-            </article>
-
-            <article class="aura-card aura-price-card aura-price-card--featured">
-              <div>
-                <span class="aura-tag">Growth</span>
-                <h3 class="aura-title-sm">For product teams</h3>
-              </div>
-              <div class="aura-price">$79</div>
-              <ul class="aura-checklist">
-                <li>Multi-page generation</li>
-                <li>Component library mapping</li>
-                <li>Priority support</li>
-              </ul>
-              <div class="aura-pricing__actions">
-                <a class="aura-button aura-button-primary" href="#top">Choose growth</a>
-              </div>
-            </article>
-
-            <article class="aura-card aura-price-card">
-              <div>
-                <span class="aura-tag">Scale</span>
-                <h3 class="aura-title-sm">For larger orgs</h3>
-              </div>
-              <div class="aura-price">$199</div>
-              <ul class="aura-checklist">
-                <li>Design ops workflows</li>
-                <li>Advanced tokens and audit packs</li>
-                <li>Team onboarding</li>
-              </ul>
-              <div class="aura-pricing__actions">
-                <a class="aura-button aura-button-secondary" href="#top">Talk to sales</a>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="aura-section">
-        <div class="aura-container">
-          <div class="aura-section__head">
-            <div class="aura-section__copy">
-              <p class="aura-eyebrow">Testimonials</p>
-              <h2 class="aura-title-lg">Proof block matching the same visual language.</h2>
-            </div>
-          </div>
-          <div class="aura-testimonial-grid">
-            <article class="aura-card aura-testimonial">
-              <p class="aura-copy">“This system feels premium without becoming loud. That balance is hard to get right.”</p>
-              <div class="aura-testimonial__meta">
-                <img src="https://i.pravatar.cc/80?img=12" alt="Avatar" />
-                <div>
-                  <strong>Marina Costa</strong>
-                  <p class="aura-copy-sm">Head of Product</p>
+            <div class="aura-hero__mock aura-hero__mock--dashboard">
+              <div class="aura-dashboard-preview">
+                <div class="aura-dashboard-preview__sidebar"></div>
+                <div class="aura-dashboard-preview__content">
+                  <div class="aura-dashboard-preview__top"></div>
+                  <div class="aura-dashboard-preview__metrics">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                  <div class="aura-dashboard-preview__chart"></div>
+                  <div class="aura-dashboard-preview__cards">
+                    <span></span>
+                    <span></span>
+                  </div>
                 </div>
               </div>
-            </article>
-            <article class="aura-card aura-testimonial">
-              <p class="aura-copy">“We reused the extracted pricing and feature patterns across four product launches.”</p>
-              <div class="aura-testimonial__meta">
-                <img src="https://i.pravatar.cc/80?img=22" alt="Avatar" />
-                <div>
-                  <strong>Lucas Mello</strong>
-                  <p class="aura-copy-sm">Design Lead</p>
-                </div>
-              </div>
-            </article>
-            <article class="aura-card aura-testimonial">
-              <p class="aura-copy">“The atomic breakdown made the original landing page logic reusable instead of decorative.”</p>
-              <div class="aura-testimonial__meta">
-                <img src="https://i.pravatar.cc/80?img=32" alt="Avatar" />
-                <div>
-                  <strong>Ana Ribeiro</strong>
-                  <p class="aura-copy-sm">Frontend Architect</p>
-                </div>
-              </div>
-            </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="aura-section" id="system-overview">
+        <div class="aura-container">
+          <div class="aura-section__head">
+            <div class="aura-section__copy">
+              <p class="aura-eyebrow">Visao geral</p>
+              <h2 class="aura-title-lg">Como o sistema foi organizado para ser claro ate para quem nao e tecnico.</h2>
+            </div>
+            <p class="aura-copy">O Aura agora trabalha como camada base do Zeus: atoms, molecules, organisms, templates, docs e tema escuro convivem no mesmo fluxo.</p>
+          </div>
+          <div class="aura-metrics-grid">
+            <div class="aura-card aura-metric">
+              <span class="aura-copy-sm">Atomic design</span>
+              <strong>4 camadas</strong>
+              <p class="aura-copy">Atoms, molecules, organisms e templates com exemplos vivos.</p>
+            </div>
+            <div class="aura-card aura-metric">
+              <span class="aura-copy-sm">Tema</span>
+              <strong>Light + Dark</strong>
+              <p class="aura-copy">Tokens paralelos com alternancia persistida no navegador.</p>
+            </div>
+            <div class="aura-card aura-metric">
+              <span class="aura-copy-sm">Prontidao</span>
+              <strong>Zeus-wide</strong>
+              <p class="aura-copy">Navbar compartilhada e navegacao continua para Home, Olympus e Soul.</p>
+            </div>
           </div>
         </div>
       </section>
@@ -241,47 +109,335 @@
         <div class="aura-container">
           <div class="aura-section__head">
             <div class="aura-section__copy">
-              <p class="aura-eyebrow">Atoms and tokens</p>
-              <h2 class="aura-title-lg">Core token gallery extracted from the source site.</h2>
+              <p class="aura-eyebrow">Atoms</p>
+              <h2 class="aura-title-lg">Tokens de cor, tipografia, espacamento, sombras e motion.</h2>
             </div>
+            <p class="aura-copy">Os tokens abaixo existem para manter consistencia visual, velocidade de construcao e previsibilidade em todas as paginas do projeto.</p>
           </div>
-          <div class="aura-token-grid">
-            <div class="aura-card aura-token">
-              <div class="aura-token__swatch" style="background:#2563eb;"></div>
-              <strong>Primary / 600</strong>
-              <code>#2563eb</code>
-            </div>
-            <div class="aura-card aura-token">
-              <div class="aura-token__swatch" style="background:#3b82f6;"></div>
-              <strong>Primary / 500</strong>
-              <code>#3b82f6</code>
-            </div>
-            <div class="aura-card aura-token">
-              <div class="aura-token__swatch" style="background:hsl(0 0% 98%);"></div>
-              <strong>Surface</strong>
-              <code>hsl(0 0% 98%)</code>
-            </div>
-            <div class="aura-card aura-token">
-              <div class="aura-token__swatch" style="background:hsl(0 0% 9%);"></div>
-              <strong>Foreground</strong>
-              <code>hsl(0 0% 9%)</code>
-            </div>
+
+          <div class="aura-showcase-grid aura-showcase-grid--wide">
+            <article class="aura-card aura-showcase-card">
+              <div class="aura-showcase-card__head">
+                <div>
+                  <p class="aura-eyebrow">Cor</p>
+                  <h3 class="aura-title-md">Paleta principal</h3>
+                </div>
+                <p class="aura-copy-sm">Use azul para acao, neutros para estrutura e estados para feedback.</p>
+              </div>
+              <div class="aura-token-grid aura-token-grid--six">
+                <div class="aura-card aura-token">
+                  <div class="aura-token__swatch aura-token__swatch--bordered" style="background:var(--aura-color-primary);"></div>
+                  <strong>Primary</strong>
+                  <code>--aura-color-primary</code>
+                </div>
+                <div class="aura-card aura-token">
+                  <div class="aura-token__swatch aura-token__swatch--bordered" style="background:var(--aura-color-primary-soft);"></div>
+                  <strong>Primary soft</strong>
+                  <code>--aura-color-primary-soft</code>
+                </div>
+                <div class="aura-card aura-token">
+                  <div class="aura-token__swatch aura-token__swatch--bordered" style="background:var(--aura-color-surface);"></div>
+                  <strong>Surface</strong>
+                  <code>--aura-color-surface</code>
+                </div>
+                <div class="aura-card aura-token">
+                  <div class="aura-token__swatch aura-token__swatch--bordered" style="background:var(--aura-color-card);"></div>
+                  <strong>Card</strong>
+                  <code>--aura-color-card</code>
+                </div>
+                <div class="aura-card aura-token">
+                  <div class="aura-token__swatch aura-token__swatch--dark" style="background:var(--aura-color-fg);"></div>
+                  <strong>Foreground</strong>
+                  <code>--aura-color-fg</code>
+                </div>
+                <div class="aura-card aura-token">
+                  <div class="aura-token__swatch aura-token__swatch--bordered" style="background:var(--aura-color-success);"></div>
+                  <strong>Success</strong>
+                  <code>--aura-color-success</code>
+                </div>
+              </div>
+            </article>
+
+            <article class="aura-card aura-showcase-card">
+              <div class="aura-showcase-card__head">
+                <div>
+                  <p class="aura-eyebrow">Tipografia</p>
+                  <h3 class="aura-title-md">Escala de texto</h3>
+                </div>
+                <p class="aura-copy-sm">Display para impacto, sans para UI, mono para trechos tecnicos.</p>
+              </div>
+              <div class="aura-type-scale">
+                <div>
+                  <span class="aura-copy-sm">Display XL</span>
+                  <p class="aura-title-xl aura-type-scale__sample">42</p>
+                </div>
+                <div>
+                  <span class="aura-copy-sm">Title LG</span>
+                  <p class="aura-title-lg aura-type-scale__sample">Athena</p>
+                </div>
+                <div>
+                  <span class="aura-copy-sm">Body</span>
+                  <p class="aura-copy aura-type-scale__body">O sistema foi feito para leitura rapida, boa hierarquia e traducao clara de complexidade.</p>
+                </div>
+                <div>
+                  <span class="aura-copy-sm">Mono</span>
+                  <p class="aura-code-inline">--aura-shadow-md</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="aura-card aura-showcase-card">
+              <div class="aura-showcase-card__head">
+                <div>
+                  <p class="aura-eyebrow">Espacamento</p>
+                  <h3 class="aura-title-md">Ritmo espacial</h3>
+                </div>
+                <p class="aura-copy-sm">A respiracao do sistema e parte central da percepcao premium.</p>
+              </div>
+              <div class="aura-spacing-scale">
+                <div><span>4</span><i style="width:var(--aura-space-4);"></i></div>
+                <div><span>8</span><i style="width:var(--aura-space-8);"></i></div>
+                <div><span>12</span><i style="width:var(--aura-space-12);"></i></div>
+                <div><span>16</span><i style="width:var(--aura-space-16);"></i></div>
+                <div><span>20</span><i style="width:var(--aura-space-20);"></i></div>
+              </div>
+            </article>
+
+            <article class="aura-card aura-showcase-card">
+              <div class="aura-showcase-card__head">
+                <div>
+                  <p class="aura-eyebrow">Raios e sombras</p>
+                  <h3 class="aura-title-md">Profundidade suave</h3>
+                </div>
+                <p class="aura-copy-sm">Cartoes, paines e modais dependem de bordas calmas e elevacao baixa.</p>
+              </div>
+              <div class="aura-depth-stack">
+                <div class="aura-depth-sample aura-depth-sample--sm">sm</div>
+                <div class="aura-depth-sample aura-depth-sample--md">md</div>
+                <div class="aura-depth-sample aura-depth-sample--lg">lg</div>
+              </div>
+            </article>
           </div>
         </div>
       </section>
 
-      <section class="aura-section">
-        <div class="aura-container aura-guideline-grid">
-          <article class="aura-card aura-guideline-card">
-            <p class="aura-eyebrow">Token guidelines</p>
-            <h3 class="aura-title-md">How to use the extracted system</h3>
-            <p class="aura-copy">Keep the neutral foundation dominant. Use blue to drive action, status, and attention. Preserve strong whitespace and avoid filling every surface with gradients.</p>
-          </article>
-          <article class="aura-card aura-guideline-card">
-            <p class="aura-eyebrow">Atomic strategy</p>
-            <h3 class="aura-title-md">How to scale it in your project</h3>
-            <p class="aura-copy">Treat buttons, headings, tags, and cards as atoms. Combine them into pricing cards, workflow steps, feature cards, and finally full landing-page organisms.</p>
-          </article>
+      <section class="aura-section" id="components">
+        <div class="aura-container">
+          <div class="aura-section__head">
+            <div class="aura-section__copy">
+              <p class="aura-eyebrow">Molecules</p>
+              <h2 class="aura-title-lg">Componentes-base para interacao, estados e leitura.</h2>
+            </div>
+            <p class="aura-copy">Esses blocos resolvem as necessidades mais comuns de qualquer interface do Zeus: CTA, formulario, informacao, feedback e placeholders.</p>
+          </div>
+
+          <div class="aura-showcase-grid">
+            <article class="aura-card aura-showcase-card">
+              <div class="aura-showcase-card__head">
+                <div>
+                  <p class="aura-eyebrow">Botoes</p>
+                  <h3 class="aura-title-md">Acoes e enfase</h3>
+                </div>
+              </div>
+              <div class="aura-button-row">
+                <button class="aura-button aura-button-primary" type="button">Acao primaria</button>
+                <button class="aura-button aura-button-secondary" type="button">Acao secundaria</button>
+                <button class="aura-button aura-button-ghost" type="button">Ghost</button>
+                <button class="aura-button aura-button-primary" type="button" disabled>Desabilitado</button>
+              </div>
+            </article>
+
+            <article class="aura-card aura-showcase-card">
+              <div class="aura-showcase-card__head">
+                <div>
+                  <p class="aura-eyebrow">Formularios</p>
+                  <h3 class="aura-title-md">Campos e filtros</h3>
+                </div>
+              </div>
+              <form class="aura-form-grid">
+                <label class="aura-field">
+                  <span>Nome do fluxo</span>
+                  <input type="text" placeholder="Ex.: Dashboard do Zeus" />
+                </label>
+                <label class="aura-field">
+                  <span>Categoria</span>
+                  <select>
+                    <option>Design System</option>
+                    <option>Dashboard</option>
+                    <option>Automacao</option>
+                  </select>
+                </label>
+                <label class="aura-field aura-field--full">
+                  <span>Descricao</span>
+                  <textarea rows="4" placeholder="Explique o objetivo da interface ou componente."></textarea>
+                </label>
+              </form>
+            </article>
+
+            <article class="aura-card aura-showcase-card">
+              <div class="aura-showcase-card__head">
+                <div>
+                  <p class="aura-eyebrow">Status</p>
+                  <h3 class="aura-title-md">Badges e alerts</h3>
+                </div>
+              </div>
+              <div class="aura-status-stack">
+                <div class="aura-status-badges">
+                  <span class="aura-badge aura-badge--success">Sincronizado</span>
+                  <span class="aura-badge aura-badge--warning">Atencao</span>
+                  <span class="aura-badge aura-badge--danger">Bloqueio</span>
+                </div>
+                <div class="aura-alert aura-alert--info">
+                  <strong>Uso recomendado</strong>
+                  <p class="aura-copy-sm">Reserve o estilo de destaque azul para a proxima acao desejada.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="aura-card aura-showcase-card">
+              <div class="aura-showcase-card__head">
+                <div>
+                  <p class="aura-eyebrow">Skeletons</p>
+                  <h3 class="aura-title-md">Estados de carregamento</h3>
+                </div>
+              </div>
+              <div class="aura-skeleton-card">
+                <div class="aura-skeleton aura-skeleton--avatar"></div>
+                <div class="aura-skeleton-stack">
+                  <div class="aura-skeleton aura-skeleton--line aura-skeleton--w-70"></div>
+                  <div class="aura-skeleton aura-skeleton--line aura-skeleton--w-100"></div>
+                  <div class="aura-skeleton aura-skeleton--line aura-skeleton--w-40"></div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="aura-section" id="organisms">
+        <div class="aura-container">
+          <div class="aura-section__head">
+            <div class="aura-section__copy">
+              <p class="aura-eyebrow">Organisms</p>
+              <h2 class="aura-title-lg">Padrões completos para dashboards, onboarding e areas de decisao.</h2>
+            </div>
+            <p class="aura-copy">Aqui estao os blocos compostos que servem de fundacao para paginas reais do Zeus Project.</p>
+          </div>
+
+          <div class="aura-feature-grid">
+            <article class="aura-card aura-feature">
+              <div class="aura-feature__icon">01</div>
+              <h3 class="aura-title-sm">Painel de onboarding</h3>
+              <p class="aura-copy">Combine hero, passos, cards e CTA para apresentar sistemas complexos com linguagem simples.</p>
+            </article>
+            <article class="aura-card aura-feature">
+              <div class="aura-feature__icon">02</div>
+              <h3 class="aura-title-sm">Radar de capacidade</h3>
+              <p class="aura-copy">Use metric cards, listas comparativas e blocos de orientacao para traduzir complexidade operacional.</p>
+            </article>
+            <article class="aura-card aura-feature">
+              <div class="aura-feature__icon">03</div>
+              <h3 class="aura-title-sm">Centro de decisao</h3>
+              <p class="aura-copy">Estruture uma pagina com blocos claros de contexto, escolhas e proxima acao recomendada.</p>
+            </article>
+          </div>
+
+          <div class="aura-template-grid">
+            <article class="aura-card aura-template-card">
+              <div class="aura-template-card__preview">
+                <div class="aura-mini-layout aura-mini-layout--dashboard"></div>
+              </div>
+              <div class="aura-template-card__body">
+                <p class="aura-eyebrow">Template</p>
+                <h3 class="aura-title-md">Dashboard educacional</h3>
+                <p class="aura-copy">Pensado para orientar usuarios leigos com metrica, explicacao e explorador na mesma tela.</p>
+              </div>
+            </article>
+            <article class="aura-card aura-template-card">
+              <div class="aura-template-card__preview">
+                <div class="aura-mini-layout aura-mini-layout--wizard"></div>
+              </div>
+              <div class="aura-template-card__body">
+                <p class="aura-eyebrow">Template</p>
+                <h3 class="aura-title-md">Wizard de configuracao</h3>
+                <p class="aura-copy">Ideal para setup de agente, skill ou squad com passos curtos, contextualizados e seguros.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="aura-section" id="motion">
+        <div class="aura-container">
+          <div class="aura-section__head">
+            <div class="aura-section__copy">
+              <p class="aura-eyebrow">Motion</p>
+              <h2 class="aura-title-lg">Animacoes, hover states e ritmos de interface.</h2>
+            </div>
+            <p class="aura-copy">O sistema usa movimento comedito. O objetivo e orientar, nao distrair.</p>
+          </div>
+
+          <div class="aura-motion-grid">
+            <article class="aura-card aura-motion-card">
+              <div class="aura-motion-demo aura-motion-demo--lift"></div>
+              <h3 class="aura-title-sm">Lift hover</h3>
+              <p class="aura-copy">Padrao para cards e botoes relevantes.</p>
+            </article>
+            <article class="aura-card aura-motion-card">
+              <div class="aura-motion-demo aura-motion-demo--pulse"></div>
+              <h3 class="aura-title-sm">Pulse shimmer</h3>
+              <p class="aura-copy">Reservado para skeletons e estados de espera.</p>
+            </article>
+            <article class="aura-card aura-motion-card">
+              <div class="aura-motion-demo aura-motion-demo--spotlight"></div>
+              <h3 class="aura-title-sm">Spotlight</h3>
+              <p class="aura-copy">Use apenas em heros, CTA premium e secoes chave.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="aura-section" id="guidelines">
+        <div class="aura-container">
+          <div class="aura-section__head">
+            <div class="aura-section__copy">
+              <p class="aura-eyebrow">Guidelines</p>
+              <h2 class="aura-title-lg">Regras de uso para manter o Zeus coerente.</h2>
+            </div>
+            <p class="aura-copy">Estas diretrizes sao o contrato visual do projeto. Sao elas que impedem que paginas novas virem excecoes desconectadas.</p>
+          </div>
+          <div class="aura-guideline-grid aura-guideline-grid--triple">
+            <article class="aura-card aura-guideline-card">
+              <p class="aura-eyebrow">Cor e contraste</p>
+              <h3 class="aura-title-md">Azul e intencao</h3>
+              <p class="aura-copy">O azul existe para conduzir a proxima acao, indicar foco, mostrar progresso e ligar a marca Zeus ao sistema. Neutros dominam o resto.</p>
+            </article>
+            <article class="aura-card aura-guideline-card">
+              <p class="aura-eyebrow">Conteudo</p>
+              <h3 class="aura-title-md">Explique antes de impressionar</h3>
+              <p class="aura-copy">Toda interface do projeto deve ajudar uma pessoa leiga a entender o que esta vendo antes de pedir uma decisao.</p>
+            </article>
+            <article class="aura-card aura-guideline-card">
+              <p class="aura-eyebrow">Atomicidade</p>
+              <h3 class="aura-title-md">Nunca pule de token para pagina</h3>
+              <p class="aura-copy">Monte a interface gradualmente. Primeiro atoms, depois molecules, depois organisms e por fim templates.</p>
+            </article>
+            <article class="aura-card aura-guideline-card">
+              <p class="aura-eyebrow">Motion</p>
+              <h3 class="aura-title-md">Movimento como feedback</h3>
+              <p class="aura-copy">Prefira deslocamento sutil, opacidade e brilho controlado. Evite animacoes grandes e repetitivas em areas densas.</p>
+            </article>
+            <article class="aura-card aura-guideline-card">
+              <p class="aura-eyebrow">Dark mode</p>
+              <h3 class="aura-title-md">Mesmo sistema, outra atmosfera</h3>
+              <p class="aura-copy">O modo escuro nao muda a hierarquia do produto. Ele apenas recalibra superficie, contraste e luz para ambientes noturnos.</p>
+            </article>
+            <article class="aura-card aura-guideline-card">
+              <p class="aura-eyebrow">Escalabilidade</p>
+              <h3 class="aura-title-md">Pages, dashboards e docs</h3>
+              <p class="aura-copy">Uma nova pagina deve nascer a partir do starter oficial, herdando tokens, navbar, tema e blocos existentes.</p>
+            </article>
+          </div>
         </div>
       </section>
     </main>
@@ -289,11 +445,16 @@
     <footer class="aura-footer">
       <div class="aura-container aura-footer__inner">
         <div>
-          <strong>Aura System Extraction</strong>
-          <p class="aura-copy-sm">Local template built from the audited design language of `ai-developer.aura.build`.</p>
+          <strong>Aura System do Zeus Project</strong>
+          <p class="aura-copy-sm">Design system vivo com suporte a light e dark, atomic design, guidelines profundas e navegacao integrada ao ecossistema.</p>
         </div>
-        <a class="aura-button aura-button-secondary" href="./docs/design-system.md">Read guidelines</a>
+        <div class="aura-footer__actions">
+          <a class="aura-button aura-button-secondary" href="../../index.html">Voltar para Home</a>
+          <a class="aura-button aura-button-primary" href="./docs/design-system.md">Ler guidelines</a>
+        </div>
       </div>
     </footer>
+
+    <script src="./app.js" type="module"></script>
   </body>
 </html>

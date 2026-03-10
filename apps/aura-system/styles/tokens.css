@@ -10,29 +10,35 @@
   --aura-color-surface-strong: hsl(0 0% 96%);
   --aura-color-border: hsl(0 0% 90%);
   --aura-color-border-strong: hsl(0 0% 84%);
-  --aura-color-muted: hsl(0 0% 45%);
+  --aura-color-muted: hsl(220 8% 40%);
   --aura-color-primary: #2563eb;
   --aura-color-primary-strong: #1d4ed8;
-  --aura-color-primary-soft: #3b82f6;
+  --aura-color-primary-soft: #60a5fa;
   --aura-color-primary-foreground: #ffffff;
-  --aura-color-card: #ffffff;
+  --aura-color-card: rgba(255, 255, 255, 0.9);
+  --aura-color-overlay: rgba(255, 255, 255, 0.74);
   --aura-color-success: #16a34a;
   --aura-color-warning: #f59e0b;
-  --aura-color-danger: hsl(0 84% 60%);
+  --aura-color-danger: #ef4444;
+  --aura-color-info: #0ea5e9;
   --aura-color-selection: rgba(59, 130, 246, 0.2);
 
-  --aura-gradient-primary: linear-gradient(180deg, #3b82f6 0%, #2563eb 100%);
+  --aura-gradient-primary: linear-gradient(180deg, #60a5fa 0%, #2563eb 100%);
   --aura-gradient-border: conic-gradient(
     from 0deg,
     transparent 0%,
     #2563eb 5%,
-    #3b82f6 15%,
-    #2563eb 30%,
-    transparent 40%,
+    #60a5fa 16%,
+    #1d4ed8 32%,
+    transparent 42%,
     transparent 100%
   );
-  --aura-gradient-page: radial-gradient(circle at top, rgba(59, 130, 246, 0.08), transparent 35%),
-    linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
+  --aura-gradient-page:
+    radial-gradient(circle at top, rgba(96, 165, 250, 0.12), transparent 32%),
+    radial-gradient(circle at 90% 5%, rgba(37, 99, 235, 0.08), transparent 26%),
+    linear-gradient(180deg, #ffffff 0%, #f7faff 52%, #f4f7fb 100%);
+  --aura-gradient-panel: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(248, 250, 252, 0.92));
+  --aura-gradient-spotlight: radial-gradient(circle at center, rgba(96, 165, 250, 0.28), transparent 60%);
 
   --aura-space-1: 0.25rem;
   --aura-space-2: 0.5rem;
@@ -51,20 +57,15 @@
   --aura-radius-md: 0.75rem;
   --aura-radius-lg: 1rem;
   --aura-radius-xl: 1.5rem;
+  --aura-radius-2xl: 2rem;
   --aura-radius-pill: 9999px;
 
-  --aura-shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.06);
-  --aura-shadow-sm: rgba(14, 63, 126, 0.04) 0px 0px 0px 1px,
-    rgba(42, 51, 69, 0.04) 0px 1px 1px -0.5px,
-    rgba(42, 51, 70, 0.04) 0px 3px 3px -1.5px;
-  --aura-shadow-md: rgba(14, 63, 126, 0.04) 0px 0px 0px 1px,
-    rgba(42, 51, 69, 0.04) 0px 1px 1px -0.5px,
-    rgba(42, 51, 70, 0.04) 0px 6px 6px -3px,
-    rgba(14, 63, 126, 0.04) 0px 12px 12px -6px;
-  --aura-shadow-lg: rgba(14, 63, 126, 0.04) 0px 0px 0px 1px,
-    rgba(42, 51, 69, 0.04) 0px 1px 1px -0.5px,
-    rgba(42, 51, 70, 0.04) 0px 12px 12px -6px,
-    rgba(14, 63, 126, 0.04) 0px 24px 24px -12px;
+  --aura-shadow-xs: 0 1px 2px rgba(15, 23, 42, 0.06);
+  --aura-shadow-sm: rgba(15, 23, 42, 0.04) 0 0 0 1px, rgba(15, 23, 42, 0.05) 0 3px 8px -4px;
+  --aura-shadow-md: rgba(15, 23, 42, 0.05) 0 0 0 1px, rgba(15, 23, 42, 0.08) 0 12px 24px -16px,
+    rgba(96, 165, 250, 0.08) 0 18px 48px -24px;
+  --aura-shadow-lg: rgba(15, 23, 42, 0.08) 0 0 0 1px, rgba(15, 23, 42, 0.12) 0 24px 56px -28px,
+    rgba(37, 99, 235, 0.14) 0 24px 80px -32px;
 
   --aura-duration-fast: 180ms;
   --aura-duration-base: 300ms;
@@ -73,4 +74,40 @@
   --aura-ease-inout: cubic-bezier(0.25, 1, 0.5, 1);
 
   --aura-container: 1400px;
+}
+
+:root[data-theme="dark"] {
+  --aura-color-bg: #07111f;
+  --aura-color-fg: #eef4ff;
+  --aura-color-surface: rgba(15, 23, 42, 0.72);
+  --aura-color-surface-strong: rgba(15, 23, 42, 0.9);
+  --aura-color-border: rgba(148, 163, 184, 0.22);
+  --aura-color-border-strong: rgba(148, 163, 184, 0.36);
+  --aura-color-muted: rgba(226, 232, 240, 0.72);
+  --aura-color-primary: #60a5fa;
+  --aura-color-primary-strong: #3b82f6;
+  --aura-color-primary-soft: #93c5fd;
+  --aura-color-primary-foreground: #07111f;
+  --aura-color-card: rgba(8, 15, 29, 0.82);
+  --aura-color-overlay: rgba(7, 17, 31, 0.76);
+  --aura-color-success: #4ade80;
+  --aura-color-warning: #fbbf24;
+  --aura-color-danger: #fb7185;
+  --aura-color-info: #38bdf8;
+  --aura-color-selection: rgba(96, 165, 250, 0.28);
+
+  --aura-gradient-primary: linear-gradient(180deg, #93c5fd 0%, #60a5fa 100%);
+  --aura-gradient-page:
+    radial-gradient(circle at top, rgba(96, 165, 250, 0.18), transparent 34%),
+    radial-gradient(circle at 90% 5%, rgba(37, 99, 235, 0.16), transparent 28%),
+    linear-gradient(180deg, #050b16 0%, #07111f 52%, #0b172a 100%);
+  --aura-gradient-panel: linear-gradient(180deg, rgba(11, 23, 42, 0.92), rgba(6, 14, 25, 0.92));
+  --aura-gradient-spotlight: radial-gradient(circle at center, rgba(96, 165, 250, 0.32), transparent 60%);
+
+  --aura-shadow-xs: 0 1px 2px rgba(2, 6, 23, 0.32);
+  --aura-shadow-sm: rgba(96, 165, 250, 0.06) 0 0 0 1px, rgba(2, 6, 23, 0.5) 0 6px 18px -10px;
+  --aura-shadow-md: rgba(96, 165, 250, 0.08) 0 0 0 1px, rgba(2, 6, 23, 0.58) 0 18px 48px -24px,
+    rgba(37, 99, 235, 0.18) 0 24px 80px -32px;
+  --aura-shadow-lg: rgba(96, 165, 250, 0.1) 0 0 0 1px, rgba(2, 6, 23, 0.72) 0 24px 72px -28px,
+    rgba(37, 99, 235, 0.24) 0 30px 100px -40px;
 }

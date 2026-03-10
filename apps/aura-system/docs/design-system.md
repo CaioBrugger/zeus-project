@@ -1,138 +1,331 @@
-# Aura AI Developer Design System Extraction
+# Aura System do Zeus Project
 
-Source audited:
+Fonte auditada originalmente:
 - `https://ai-developer.aura.build/`
-- downloaded HTML: `aura-site-inline.html`
-- downloaded CSS bundle: `aura-site.css`
-- downloaded JS bundle: `aura-site.js`
+- HTML baixado: `aura-site-inline.html`
+- CSS baixado: `aura-site.css`
+- JS baixado: `aura-site.js`
 
-## Extraction Summary
+Estado atual:
+- o sistema foi absorvido pelo `Zeus Project`
+- a pagina do Aura nao e mais isolada
+- a navbar agora preserva a navegacao para `Home`, `Olympus`, `Soul` e `Aura System`
+- o design system possui versao `light` e `dark`
+- a pagina principal virou uma vitrine viva de atoms, molecules, organisms, templates, motion e skeletons
 
-This system is a clean AI SaaS landing page built on a tokenized Tailwind-style foundation with a restrained monochrome base and a blue action layer.
+## Objetivo do sistema
 
-Core signals extracted from the source:
+O Aura System existe para evitar paginas improvisadas dentro do Zeus Project.
+Ele define:
 
-- typography defaults to `Inter`
-- neutral grayscale foundation via HSL tokens
-- primary accent around `#2563eb` / `#3b82f6`
-- radius baseline of `0.5rem`
-- strong use of subtle layered shadows
-- sticky blurred navigation
-- premium CTA treatment with animated conic-gradient border
-- airy landing-page layout with large containers and generous spacing
-- section pattern: hero, logos/proof, features, workflow, pricing, testimonials, footer
+- como o sistema parece
+- como o sistema se move
+- como o sistema explica complexidade para leigos
+- como novas paginas devem nascer sem quebrar a coerencia visual
 
-## Atomic Design Mapping
+## Principios do Aura no Zeus
+
+1. Claridade antes de ornamentacao
+2. Azul para intencao, neutros para estrutura
+3. Respiro amplo como sinal de qualidade
+4. Motion como feedback, nao como barulho
+5. Atomic design como metodo de construcao obrigatorio
+6. Todo fluxo importante deve ser entendivel por uma pessoa nao tecnica
+
+## Arquitetura de arquivos
+
+### CSS
+
+- `styles/tokens.css`
+- `styles/atoms.css`
+- `styles/molecules.css`
+- `styles/organisms.css`
+- `styles/template.css`
+
+### UI
+
+- `index.html`
+- `app.js`
+
+### Assets de referencia
+
+- `components/`
+- `templates/`
+- `react/`
+- `tokens.json`
+- `tailwind.tokens.js`
+
+## Atomic Design
 
 ### Atoms
 
-- tokens
-- headings
-- paragraphs
+Atoms sao os elementos minimos do sistema.
+
+Incluem:
+- cores semanticas
+- tipografia
+- espacamentos
+- raios
+- sombras
+- duracoes
+- curvas de easing
 - tags
-- primary and secondary buttons
-- shiny CTA
-- cards
-- dividers
+- botoes
+- badges
+- alerts
+- campos
+- skeleton primitives
+- blocos de codigo inline
+
+Regra:
+- nenhum template deve introduzir estilo novo sem primeiro definir ou reutilizar um atom
 
 ### Molecules
 
-- navigation brand cluster
-- metric card
-- feature card
-- workflow step
-- pricing card
-- testimonial card
-- token card
+Molecules sao combinacoes pequenas e reutilizaveis.
+
+Incluem:
+- navbar links
+- card de token
+- card de showcase
+- grupos de botoes
+- formularios curtos
+- combinacoes de badges e alertas
+- bloco de skeleton de item
+- blocos de motion demo
+
+Regra:
+- toda molecule deve ter uma responsabilidade clara e nome sem ambiguidade
 
 ### Organisms
 
-- sticky navigation
-- hero block
-- metrics grid
-- feature grid
-- workflow band
-- pricing section
-- testimonials section
-- token gallery
-- guideline matrix
-- footer
+Organisms sao blocos compostos para paginas reais.
+
+Incluem:
+- hero do sistema
+- grades de metricas
+- grade de features
+- templates cards
+- bloco de guidelines
+- blocos de motion
+- previews de dashboard
+
+Regra:
+- organisms devem resolver uma secao inteira, nao uma parte aleatoria dela
 
 ### Templates
 
-- AI SaaS landing page template
-- design system documentation page
+Templates definem como organisms sao organizados em uma pagina de produto, dashboard ou documentacao.
 
-## Token Guidelines
+No Zeus Project, um template precisa:
+- preservar navbar compartilhada
+- herdar light e dark mode
+- usar hierarquia textual clara
+- ter pelo menos uma proxima acao clara
+- funcionar em desktop e mobile
 
-### Color
+## Tokens
 
-- neutrals are the base system; use them for surfaces, text, borders, and hierarchy
-- blue is the primary action color; keep it concentrated in CTAs, highlights, links, charts, and active states
-- do not overuse saturated accents outside action moments
-- use white and near-white cards to preserve the product-demo feel
+## Cor
 
-### Typography
+### Light
 
-- `Inter` is the operational sans for body and interface
-- display sizes use the same family with stronger negative tracking
-- serif is optional for editorial emphasis only, not as default body style
-- mono is reserved for tokens, code, and technical snippets
+- `--aura-color-bg`: fundo principal claro
+- `--aura-color-fg`: texto principal
+- `--aura-color-surface`: superficie secundaria
+- `--aura-color-card`: cards e paineis
+- `--aura-color-border`: contorno padrao
+- `--aura-color-primary`: acao principal
+- `--aura-color-primary-soft`: destaque secundario
+- `--aura-color-success`: feedback positivo
+- `--aura-color-warning`: atencao
+- `--aura-color-danger`: falha ou bloqueio
+- `--aura-color-info`: mensagens orientativas
 
-### Spacing
+### Dark
 
-- the system feels premium because of breathing room; default to `16, 24, 32, 48, 64px` rhythm
-- section spacing should feel generous and calm
-- cards should have internal padding between `20px` and `24px`
+No dark mode, a relacao semantica e mantida.
+O que muda:
+- superfices ficam profundas, nunca preto chapado absoluto
+- bordas ficam translúcidas
+- o azul clareia para preservar contraste
+- texto neutro sobe bastante para leitura noturna
 
-### Radius
+Regra de uso:
+- `primary` aparece em CTA, foco, progresso, itens ativos e graficos
+- `success`, `warning`, `danger` e `info` sao reservados para feedback semantico
+- o fundo nunca deve competir com o conteudo
 
-- base radius: `8px`
-- medium radius: `12px`
-- large radius: `16px`
-- extra large cards: `24px`
-- pill buttons and badges use full rounded values
+## Tipografia
 
-### Shadows
+- `--aura-font-display`: titulos e grandes mensagens
+- `--aura-font-sans`: interface, corpo e formularios
+- `--aura-font-serif`: editorial raro, uso especial
+- `--aura-font-mono`: codigo, tokens e paths
 
-- use multi-layered, low-opacity shadows
-- prefer soft elevation instead of hard dark drops
-- primary CTA can combine outer elevation with subtle inset highlight
+Diretrizes:
+- prefira titulos curtos
+- corpo deve explicar, nao performar
+- mono deve aparecer apenas em contextos tecnicos
 
-### Motion
+## Espacamento
 
-- transitions should use eased, premium movement
-- default hover behavior is slight lift or emphasis, not aggressive scale
-- spotlight animations and conic borders are reserved for hero CTAs and not repeated everywhere
+Escala principal:
+- `4`
+- `8`
+- `12`
+- `16`
+- `20`
+- `24`
 
-### Borders
+Uso:
+- entre label e input: `2`
+- padding interno de card pequeno: `5`
+- padding interno de card maior: `6`
+- separacao entre secoes: `20` ou `24`
 
-- borders are present almost everywhere but remain quiet
-- default border opacity should stay light
-- featured cards can intensify border color with a subtle accent tint
+Regra:
+- se a tela parecer comprimida, quase sempre o problema e espacamento, nao falta de cor
 
-## Reuse Notes
+## Radius
 
-This extraction recreates the logic and feel of the source site, not a byte-for-byte clone.
-Use this system for:
+- `sm`: detalhes pequenos
+- `md`: campos e blocos compactos
+- `lg`: cards e previews
+- `xl`: paineis principais
+- `2xl`: superficies heroicas
+- `pill`: badges, toggles e botoes
 
-- AI SaaS landing pages
-- product launches
-- pricing pages
-- design system seeds for new products
-- React/Next implementation starting points
+## Sombra
 
-## Deliverables Included
+- `xs`: detalhes minimos
+- `sm`: campos e botoes suaves
+- `md`: card padrao
+- `lg`: destaque heroico, modais, paines prioritarios
 
-### Static system
+Regra:
+- use sombra para profundidade, nao para dramatizacao
+
+## Motion Tokens
+
+- `--aura-duration-fast`
+- `--aura-duration-base`
+- `--aura-duration-slow`
+- `--aura-ease-out`
+- `--aura-ease-inout`
+
+Uso recomendado:
+- hover simples: `fast`
+- transicoes de estado: `base`
+- efeitos hero ou spotlight: `slow`
+
+## Guidelines por categoria
+
+## Navbar
+
+A navbar do Aura agora e navbar do Zeus dentro desta pagina.
+
+Ela deve:
+- sempre manter o usuario dentro do projeto
+- oferecer retorno imediato para `Home`, `Olympus` e `Soul`
+- mostrar claramente a pagina atual
+- suportar toggle de tema
+
+## Hero
+
+O hero do Aura nao deve vender apenas beleza.
+Ele precisa:
+- explicar o papel do sistema
+- dizer que o Aura pertence ao Zeus
+- apresentar a proxima acao
+- orientar o usuario sobre o que vai encontrar abaixo
+
+## Cards
+
+Cards devem:
+- ter padding generoso
+- separar conteudo em grupos legiveis
+- nunca depender apenas de cor para comunicar relevancia
+- manter bordas suaves e consistentes
+
+## Formularios
+
+Campos devem:
+- ter labels sempre visiveis
+- mostrar foco com borda e halo, nao apenas mudanca de fundo
+- evitar placeholders como unica instrucao
+- respeitar contraste em light e dark
+
+## Skeletons
+
+Skeletons existem para:
+- reduzir sensacao de travamento
+- antecipar a estrutura da interface
+- preservar o layout enquanto dados carregam
+
+Regra:
+- use shimmer suave e largura variavel
+- nao use skeleton em excesso quando um estado vazio explicativo for melhor
+
+## Motion
+
+Animacoes oficiais do sistema:
+- `lift`
+- `pulse slide`
+- `spotlight`
+- `shimmer`
+
+Regras:
+- o hover de lift e o padrao mais seguro
+- spotlight e exclusivo de heros e destaques raros
+- pulse e shimmer sao principalmente para loading
+- nunca empilhe multiplas animacoes fortes no mesmo bloco
+
+## Dark Mode
+
+Objetivo:
+- oferecer conforto visual sem criar um segundo produto
+
+Regras:
+- dark mode herda a mesma hierarquia
+- componentes nao mudam de estrutura
+- contrastes devem continuar legiveis
+- o azul fica mais luminoso porque o fundo e mais fechado
+
+## Templates oficiais
+
+Os templates do Zeus que devem nascer a partir do Aura:
+- home de modulo
+- dashboard orientativo
+- wizard de configuracao
+- pagina de guidelines
+- pagina de catalogo
+- pagina de status ou operacao
+
+## Checklist para novas paginas
+
+Antes de considerar uma pagina pronta, valide:
+
+1. A navbar manteve o usuario dentro do Zeus Project?
+2. O tema light e dark funcionam?
+3. A pagina explica o que faz para um leigo?
+4. Existe uma CTA principal clara?
+5. O layout usa atoms e molecules existentes?
+6. Os estados de vazio, carregamento e feedback existem?
+7. Mobile continua legivel?
+
+## Entregaveis atuais
+
+### Base estatica
 
 - `styles/tokens.css`
 - `styles/atoms.css`
 - `styles/molecules.css`
 - `styles/organisms.css`
 - `index.html`
+- `app.js`
 
-### Component snippets
+### Componentes de referencia
 
 - `components/nav.html`
 - `components/hero.html`
@@ -141,7 +334,7 @@ Use this system for:
 - `components/card-pricing.html`
 - `components/card-testimonial.html`
 
-### Token exports
+### Export de tokens
 
 - `tokens.json`
 - `tailwind.tokens.js`
@@ -153,6 +346,15 @@ Use this system for:
 - `react/components/AuraPricingCard.tsx`
 - `react/components/AuraHero.tsx`
 - `react/app.page.tsx`
-- pricing pages
-- solution overview pages
-- technical marketing pages with high clarity
+- `react/templates/PageStarter.tsx`
+
+## Resumo final
+
+O Aura System agora nao e apenas uma extracao de estilo.
+Ele virou o contrato visual do Zeus Project:
+
+- integrado a navegacao do ecossistema
+- com dark mode real
+- com showcase completo de sistema
+- com metodologia atomica aplicada
+- com guidelines para manter o projeto coerente no longo prazo
