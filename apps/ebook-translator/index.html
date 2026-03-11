@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zeus Project | E-book Translator</title>
+  <link rel="stylesheet" href="../aura-system/styles/template.css" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body data-nav-root="../.." data-nav-current="translator">
+  <div data-zeus-nav></div>
+
+  <main class="translator-shell">
+    <section class="translator-hero">
+      <div class="aura-container translator-hero__grid">
+        <div class="translator-hero__copy">
+          <span class="aura-tag">Zeus Editorial Forge</span>
+          <h1 class="aura-title-xl">Traducao religiosa em lote com composicao editorial real.</h1>
+          <p class="aura-copy-lg">
+            A operacao agora separa biblioteca, fila e edicoes publicadas.
+            Tradução rapida com baixo custo, blueprint com Claude Sonnet e
+            diagramação por ebook com Claude Haiku.
+          </p>
+          <div class="translator-hero__actions">
+            <a class="aura-button aura-button-primary" href="#library">Abrir biblioteca</a>
+            <a class="aura-button aura-button-secondary" href="#operations">Ver fila</a>
+            <a class="aura-shiny-cta" href="../../projects/ebook-translator/prd.md">PRD</a>
+          </div>
+          <div class="translator-badges">
+            <span class="aura-badge aura-badge--success">PT only translation</span>
+            <span class="aura-badge aura-badge--warning">Hebraico/Grego preservados</span>
+            <span class="aura-badge aura-badge--info">DOCX + PDF editorial</span>
+          </div>
+        </div>
+
+        <article class="aura-card translator-command">
+          <div class="translator-command__head">
+            <div>
+              <p class="aura-eyebrow">Motores do ritual</p>
+              <h2 class="aura-title-md">Pipeline em tres inteligencias</h2>
+            </div>
+          </div>
+          <div class="translator-command__stats">
+            <div>
+              <span class="aura-copy-sm">Traducao</span>
+              <strong>Gemini 2.5 Flash Lite</strong>
+            </div>
+            <div>
+              <span class="aura-copy-sm">Template DOCX</span>
+              <strong>Claude Sonnet</strong>
+            </div>
+            <div>
+              <span class="aura-copy-sm">Diagramação</span>
+              <strong>Claude Haiku</strong>
+            </div>
+          </div>
+          <div class="translator-command__note aura-alert aura-alert--info">
+            <strong>Regra soberana</strong>
+            <p class="aura-copy-sm">
+              O sistema traduz apenas blocos em portugues e trata hebraico e
+              grego como material sagrado preservado no artefato final.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="aura-section">
+      <div class="aura-container">
+        <div class="translator-metrics" id="metrics"></div>
+      </div>
+    </section>
+
+    <section class="aura-section" id="library">
+      <div class="aura-container translator-board">
+        <article class="aura-card translator-panel">
+          <div class="translator-panel__head">
+            <div>
+              <p class="aura-eyebrow">Biblioteca</p>
+              <h2 class="aura-title-md">Categorias e pastas do acervo</h2>
+            </div>
+            <span class="aura-badge aura-badge--info" id="libraryCount">0 livros</span>
+          </div>
+          <div class="translator-library-nav" id="libraryNav"></div>
+          <div class="translator-library-grid" id="libraryGrid"></div>
+        </article>
+
+        <article class="aura-card translator-panel">
+          <div class="translator-panel__head">
+            <div>
+              <p class="aura-eyebrow">Edicoes</p>
+              <h2 class="aura-title-md">Saidas recentes</h2>
+            </div>
+          </div>
+          <div class="translator-edition-list" id="editionRail"></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="aura-section">
+      <div class="aura-container">
+        <div class="translator-detail aura-card" id="detailCard"></div>
+      </div>
+    </section>
+
+    <section class="aura-section" id="operations">
+      <div class="aura-container">
+        <div class="translator-toolbar aura-card">
+          <div class="translator-filter">
+            <label class="aura-field">
+              <span>Status</span>
+              <select id="statusFilter">
+                <option value="all">Todos</option>
+              </select>
+            </label>
+          </div>
+          <div class="translator-filter">
+            <label class="aura-field">
+              <span>Idioma</span>
+              <select id="languageFilter">
+                <option value="all">Todos</option>
+              </select>
+            </label>
+          </div>
+          <div class="translator-filter">
+            <label class="aura-field">
+              <span>Busca</span>
+              <input id="searchFilter" type="search" placeholder="Titulo, caminho ou colecao" />
+            </label>
+          </div>
+          <div class="translator-actions">
+            <button class="aura-button aura-button-primary" id="scanSourceButton" type="button">Escanear pasta</button>
+            <button class="aura-button aura-button-secondary" id="refreshDashboardButton" type="button">Atualizar
+              painel</button>
+          </div>
+        </div>
+
+        <div class="translator-ops-grid">
+          <article class="aura-card translator-panel">
+            <div class="translator-panel__head">
+              <div>
+                <p class="aura-eyebrow">Fila</p>
+                <h2 class="aura-title-md">Jobs por idioma</h2>
+              </div>
+            </div>
+            <div class="translator-table-shell">
+              <table class="translator-table">
+                <thead>
+                  <tr>
+                    <th>Ebook</th>
+                    <th>Idioma</th>
+                    <th>Etapa</th>
+                    <th>Progresso</th>
+                    <th>Layout</th>
+                    <th>Saida</th>
+                  </tr>
+                </thead>
+                <tbody id="queueTable"></tbody>
+              </table>
+            </div>
+          </article>
+
+          <article class="aura-card translator-panel">
+            <div class="translator-panel__head">
+              <div>
+                <p class="aura-eyebrow">Pipeline</p>
+                <h2 class="aura-title-md">Etapas editoriais</h2>
+              </div>
+            </div>
+            <div class="translator-stage-list" id="stageList"></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="../../shared/zeus-nav.js"></script>
+  <script src="./app.js" type="module"></script>
+</body>
+
+</html>
